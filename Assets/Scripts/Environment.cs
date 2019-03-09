@@ -7,6 +7,7 @@ public class Environment : MonoBehaviour
     public int numObstacles;
     public float mapSizeX;
     public float mapSizeY;
+    public float objectScaleFactor;
     public GameObject[] prefabsObstacle;
 
     // Start is called before the first frame update
@@ -23,7 +24,7 @@ public class Environment : MonoBehaviour
                 GameObject prefabObject = prefabsObstacle[index];
                 Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1));
                 Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, 0), orientation).transform;
-                tf.localScale.Set(noiseValue, noiseValue, 1);
+                tf.localScale = new Vector3(objectScaleFactor * noiseValue, objectScaleFactor * noiseValue, 1);
             }
         }
     }

@@ -226,6 +226,7 @@ MonoBehaviour:
   numObstacles: 10
   mapSizeX: 10
   mapSizeY: 10
+  objectScaleFactor: 0.5
   prefabsObstacle:
   - {fileID: 5856053262858217192, guid: 5fc7647ba83121c47b0f0f8cdf7efe59, type: 3}
 --- !u!4 &1343816255
