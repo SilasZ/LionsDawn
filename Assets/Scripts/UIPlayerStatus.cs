@@ -13,7 +13,7 @@ public class UIPlayerStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerStatusUpdate(100, 50,100,100);
+        PlayerStatusUpdate(100, 50,100,100); 
     }
 
     // Update is called once per frame
