@@ -7,13 +7,13 @@ public class UIPlayerStatus : MonoBehaviour
 {
     public RectTransform liveBar;
     public RectTransform fuelBar;
-    public int barLength = 400;
-    public int barHight = 50;
+    public int barLength = 100;
+    public int barHight = 100;
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerStatusUpdate(100, 50,100,100); 
+        PlayerStatusUpdate(100, 50,100,50); 
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class UIPlayerStatus : MonoBehaviour
         float lenghtFuelBarNow = barLength * fuelInPercent;
 
 
-        liveBar.sizeDelta = new Vector2(lenghtLiveBarNow, barHight);
+        //liveBar.sizeDelta = new Vector2(lenghtLiveBarNow, barHight);
         fuelBar.sizeDelta = new Vector2(lenghtFuelBarNow, barHight);
 
     }
