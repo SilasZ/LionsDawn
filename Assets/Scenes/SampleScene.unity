@@ -5595,12 +5595,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89276a472e7dedf43b9d3d2aa765c877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numObstacles: 10
-  mapSizeX: 30
-  mapSizeY: 30
-  objectScaleFactor: 0.5
+  numObstacles: 350
+  mapSizeX: 600
+  mapSizeY: 600
+  objectScaleFactor: 5
   prefabsObstacle:
-  - {fileID: 5856053262858217192, guid: 5fc7647ba83121c47b0f0f8cdf7efe59, type: 3}
+  - {fileID: 3812664465310516269, guid: b2d9cf66b5c6b5b449421271270d808b, type: 3}
+  - {fileID: 5476510283470393751, guid: 0f4b1e59c9a519343a9fabeefeced523, type: 3}
+  - {fileID: 3041022475168888030, guid: 9f81ea3991bc9ae4c83a57cbd31cb17b, type: 3}
+  spawnRadius: 2500
+  perlinScale: 100
 --- !u!4 &1433755216
 Transform:
   m_ObjectHideFlags: 0
