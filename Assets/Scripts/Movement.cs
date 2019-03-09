@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
 
     public void FixedUpdate()
 	{
-        waterNow = waterNow -0.01F;
+        waterNow = waterNow -0.005F;
         bool engineOn = false;
         
 
@@ -93,7 +93,7 @@ public class Movement : MonoBehaviour
 
         if (engineOn)
         {
-            waterNow = waterNow - 0.05F;
+            waterNow = waterNow - 0.02F;
         }
 
 
