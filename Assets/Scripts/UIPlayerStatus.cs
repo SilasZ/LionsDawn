@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIPlayerStatus : MonoBehaviour
+public class UIPlayerStatus : MonoBehaviour  
 {
+    public RectTransform liveBar;
+    public RectTransform fuelBar;
+    public int barLength = 400;
+    public int barHight = 50;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerStatusUpdate(100, 50,100,100);
     }
 
     // Update is called once per frame
@@ -16,13 +22,17 @@ public class UIPlayerStatus : MonoBehaviour
         
     }
 
-    public void PlayerStatusUpdate(float hitpointsMax, float hitpointsNow)
+    public void PlayerStatusUpdate(float hitpointsMax, float hitpointsNow, float fuelMax, float fuelNow)
     {
         float hitpointsInPercent = hitpointsNow / hitpointsMax;
+        float fuelInPercent = fuelNow / fuelMax;
 
-        for (float f = hitpointsInPercent; f > 0; f=f-0.1F)
-        {
-            //Stuff
-        }
+        float lenghtLiveBarNow = barLength * hitpointsInPercent;
+        float lenghtFuelBarNow = barLength * fuelInPercent;
+
+
+        liveBar.sizeDelta = new Vector2(lenghtLiveBarNow, barHight);
+        fuelBar.sizeDelta = new Vector2(lenghtFuelBarNow, barHight);
+
     }
 }
