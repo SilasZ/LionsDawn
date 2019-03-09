@@ -5005,9 +5005,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 320, y: -40}
+  m_AnchoredPosition: {x: 20, y: -40}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &686810031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5236,12 +5236,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a08afd5f9c98acc98851a537625ca9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
-  rotspeed: 20
+  speed: 20
+  rotspeed: 10
   hitpointsMax: 100
   waterMax: 100
   sound: {fileID: 1868210643}
-  steam: {fileID: 267276993}
+  steam: {fileID: 267276996}
 --- !u!60 &1018007125
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5333,9 +5333,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
-  m_LinearDrag: 1
-  m_AngularDrag: 1
+  m_Mass: 1
+  m_LinearDrag: 2
+  m_AngularDrag: 2
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -5982,9 +5982,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 220, y: -96}
+  m_AnchoredPosition: {x: 20, y: -96}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2132152319
 MonoBehaviour:
   m_ObjectHideFlags: 0

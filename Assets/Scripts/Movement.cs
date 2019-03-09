@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     UIPlayerStatus ui;
 
     public AudioSource sound;
-    public GameObject steam;
+    public ParticleSystem steam;
 
     void OnCollisionEnter2D(Collision2D collision)  //Plays Sound Whenever collision detected
     {
@@ -45,28 +45,35 @@ public class Movement : MonoBehaviour
 
     public void FixedUpdate()
 	{
+        
         waterNow = waterNow -0.005F;
         bool engineOn = false;
         
 
         float forwardspeed = (transform.InverseTransformDirection(rb.velocity)).y;
+        
 
+
+
+        steam.startSpeed = forwardspeed/4+3;
 
         
         if (Input.GetKey("w")) {
     	  	rb.AddForce(transform.up * speed);
             engineOn = true;
-            steam.GetComponent<ParticleSystem>().Play();
+            var emission = steam.emission;
+            emission.rate = 40;
         }
         else
         {
-            steam.GetComponent<ParticleSystem>().Pause();
+            var emission = steam.emission;
+            emission.rate = 10;
         }
 
  	   	if(Input.GetKey("s")) {
             
             
-            if (forwardspeed>0)
+            if (forwardspeed>-5F)
             {
                 rb.AddForce(transform.up * -speed * 0.5F);
                 engineOn = true;
