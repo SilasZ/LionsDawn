@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 1f6993df4cc4c9c44933d9523a26949b
+guid: e3fe63e71a6536443843966d8548d610
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Ship(test)_0
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -41,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,44 +69,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Ship(test)_0
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 190
-        width: 512
-        height: 549
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b6f27450624f0447a5d003210a2cc8d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0605cb5a7c4f18241aed14f31d51d76c
+    spriteID: 03a50357141c7b34d895fe385de70392
     vertices: []
     indices: 
     edges: []
