@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
             // Clockwise
             if (rb.angularVelocity > -30)
             {
-                rb.AddForce(transform.right*rotspeed*0.5F);
+                //rb.AddForce(transform.right*rotspeed*0.5F);
                 rb.AddTorque(-rotspeed);
             }
             
@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
             // Counter-clockwise
             if (rb.angularVelocity < 30 )
             {
-                rb.AddForce(-transform.right*rotspeed*0.5F);
+                //rb.AddForce(-transform.right*rotspeed*0.5F);
                 rb.AddTorque(rotspeed);
             }
                 
