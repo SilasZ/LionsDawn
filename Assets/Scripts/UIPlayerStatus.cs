@@ -31,7 +31,7 @@ public class UIPlayerStatus : MonoBehaviour
         float lenghtFuelBarNow = barLength * fuelInPercent;
 
 
-        //liveBar.sizeDelta = new Vector2(lenghtLiveBarNow, barHight);
+        liveBar.sizeDelta = new Vector2(lenghtLiveBarNow, barHight);
         fuelBar.sizeDelta = new Vector2(lenghtFuelBarNow, barHight);
 
     }
