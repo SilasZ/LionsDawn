@@ -83,7 +83,7 @@ public class Movement : MonoBehaviour
 
 		if(Input.GetKey("d")) {
             // Clockwise
-            if (rb.angularVelocity > -30)
+            if (rb.angularVelocity > -50)
             {
                 //rb.AddForce(transform.right*rotspeed*0.5F);
                 rb.AddTorque(-rotspeed);
@@ -95,7 +95,7 @@ public class Movement : MonoBehaviour
        
  	   	if(Input.GetKey("a")) {
             // Counter-clockwise
-            if (rb.angularVelocity < 30 )
+            if (rb.angularVelocity < 50 )
             {
                 //rb.AddForce(-transform.right*rotspeed*0.5F);
                 rb.AddTorque(rotspeed);
