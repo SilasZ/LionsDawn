@@ -6096,7 +6096,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: And so you cast off to find some lost souls
+  m_Text: And so you cast off to find some lost souls!
 --- !u!222 &1614367653
 CanvasRenderer:
   m_ObjectHideFlags: 0
