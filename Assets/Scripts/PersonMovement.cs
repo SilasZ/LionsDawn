@@ -29,7 +29,7 @@ public class PersonMovement : MonoBehaviour
 
     private IEnumerator Beam()
     {
-        var places = FindObjectsOfType<Place>().Where(a => !transform.parent || a.transform.parent != transform.parent.parent);
+        var places = FindObjectsOfType<Place>().Where(a => (!transform.parent || a.transform.parent != transform.parent.parent) && a.transform.childCount == 0);
         var nearestPlace = places.OrderBy(a => Vector2.Distance(a.transform.position, transform.position)).FirstOrDefault();
         if (nearestPlace && Vector2.Distance(nearestPlace.transform.position, transform.position) < maxDistance)
         {
