@@ -7,7 +7,6 @@ public class Wind : MonoBehaviour
     AreaEffector2D area;
     ParticleSystemForceField particleForce;
     AudioSource audioSource;
-    float direction = 0;
     float strength = 1;
     public float maxStrength = 10;
 
