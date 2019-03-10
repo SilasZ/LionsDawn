@@ -8,6 +8,8 @@ public class PersonMovement : MonoBehaviour
 
     public float beamRadius;
     public GameObject beam;
+    private float maxDistance = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,7 @@ public class PersonMovement : MonoBehaviour
     {
         var places = FindObjectsOfType<Place>().Where(a => !transform.parent || a.transform.parent != transform.parent.parent);
         var nearestPlace = places.OrderBy(a => Vector2.Distance(a.transform.position, transform.position)).FirstOrDefault();
-        if (nearestPlace)
+        if (nearestPlace && Vector2.Distance(nearestPlace.transform.position, transform.position) < maxDistance)
         {
             Instantiate(beam, transform.position - Vector3.forward, Quaternion.identity);
             Instantiate(beam, nearestPlace.transform.position - Vector3.forward, Quaternion.identity);
