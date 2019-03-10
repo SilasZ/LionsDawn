@@ -7144,6 +7144,9 @@ GameObject:
   - component: {fileID: 1433755216}
   - component: {fileID: 1433755215}
   - component: {fileID: 1433755217}
+  - component: {fileID: 1433755218}
+  - component: {fileID: 1433755220}
+  - component: {fileID: 1433755219}
   m_Layer: 0
   m_Name: Map Generator
   m_TagString: Untagged
@@ -7201,12 +7204,78 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numObstacles: 100
   mapSizeR: 500
-  objectScaleFactor: 0.2
+  objectScaleFactor: 1
   prefabsObstacle:
   - {fileID: 5856053262858217192, guid: 5fc7647ba83121c47b0f0f8cdf7efe59, type: 3}
   spawnRadius: 1
   perlinScale: 100
   threshold: 0.5
+--- !u!114 &1433755218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433755214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e543b74f737b7e14db443c0be540488a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numObstacles: 100
+  mapSizeR: 500
+  objectScaleFactor: 3
+  prefabsObstacle:
+  - {fileID: 6906471599585913012, guid: b5128619a62bdf24384e0b86b1c5d9b3, type: 3}
+  - {fileID: 8459557044361495412, guid: cdcfa9d325ec22e408556dd7cd210430, type: 3}
+  - {fileID: 8597089303171716676, guid: 43f8329de76db8b41a72943df8cc3182, type: 3}
+  spawnRadius: 0
+  perlinScale: 100
+  threshold: 0.7
+--- !u!114 &1433755219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433755214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e543b74f737b7e14db443c0be540488a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numObstacles: 100
+  mapSizeR: 500
+  objectScaleFactor: 30
+  prefabsObstacle:
+  - {fileID: 8769438014423824553, guid: 1487757af4f90244b982c10b48bc796e, type: 3}
+  - {fileID: 4135311340016260052, guid: 7597b38f90ab43740a5c25742bdfa764, type: 3}
+  - {fileID: 5521464095059009763, guid: 065dc57d54a593141b8c095a0e7d36cc, type: 3}
+  spawnRadius: 0
+  perlinScale: 100
+  threshold: 0
+--- !u!114 &1433755220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433755214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e543b74f737b7e14db443c0be540488a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numObstacles: 100
+  mapSizeR: 500
+  objectScaleFactor: 3
+  prefabsObstacle:
+  - {fileID: 2544380356932371769, guid: 87d40a75502b478469c4f5d7e582fc3d, type: 3}
+  - {fileID: 8919002997919977999, guid: 8e2809b5892f4614db39e8ca94a3017a, type: 3}
+  - {fileID: 200496747844585505, guid: a9c698727ed208346acd31ed97cc508a, type: 3}
+  spawnRadius: 0
+  perlinScale: 100
+  threshold: 0.3
 --- !u!1 &1448568600
 GameObject:
   m_ObjectHideFlags: 0
