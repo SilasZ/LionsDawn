@@ -10,7 +10,7 @@ public class Decoration : MonoBehaviour
     public GameObject[] prefabsObstacle;
     public float spawnRadius;
     public float perlinScale;
-    private float threshold;
+    public float threshold;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class Decoration : MonoBehaviour
                 GameObject prefabObject = prefabsObstacle[index];
                 Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1));
                 Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, 0), orientation).transform;
-                tf.localScale = new Vector3(objectScaleFactor * noiseValue, objectScaleFactor * noiseValue, 1);
+                tf.localScale = new Vector3(objectScaleFactor, objectScaleFactor, 1);
                 i++;
             }
         }

@@ -7206,6 +7206,7 @@ MonoBehaviour:
   - {fileID: 5856053262858217192, guid: 5fc7647ba83121c47b0f0f8cdf7efe59, type: 3}
   spawnRadius: 1
   perlinScale: 100
+  threshold: 0.5
 --- !u!1 &1448568600
 GameObject:
   m_ObjectHideFlags: 0
