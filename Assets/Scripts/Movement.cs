@@ -45,6 +45,12 @@ public class Movement : MonoBehaviour
 
     public void FixedUpdate()
 	{
+        if(hitpointsNow<1 || waterNow < 1)
+        {
+            ui.ShowDeadText();
+            steam.Stop();
+            return;
+        }
         
         waterNow = waterNow -0.005F;
         bool engineOn = false;
