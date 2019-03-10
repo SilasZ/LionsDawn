@@ -41,6 +41,7 @@ public class UIPlayerStatus : MonoBehaviour
 
     IEnumerator StartGame()
     {
+        startText.enabled = true;
         yield return new WaitForSeconds(4);
         startText.enabled = false;
     }
