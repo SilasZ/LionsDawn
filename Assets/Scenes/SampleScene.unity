@@ -8712,6 +8712,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755703717}
   m_CullTransparentMesh: 0
+<<<<<<< HEAD
 --- !u!1 &1647705009
 GameObject:
   m_ObjectHideFlags: 0
@@ -8805,6 +8806,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of a359964... Runners implemented again
 --- !u!1 &1722466492
 GameObject:
   m_ObjectHideFlags: 0
