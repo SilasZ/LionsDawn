@@ -8,7 +8,14 @@ public class UpgradeControl : MonoBehaviour
     
 {
     public Movement playerMovement;
+    public Sprite checkboxFilled;
+
     public Text WaterVesselCostText;
+    public Image WaterCostSymbol;
+    public Image waterCheckbox1;
+    public Image waterCheckbox2;
+    public Image waterCheckbox3;
+    public Button waterUpgradeButton;
 
     int WaterVesselUpgradeCost = 3;
     int WaterVesselUpgradeNumber = 0;
@@ -31,10 +38,24 @@ public class UpgradeControl : MonoBehaviour
         {
             playerMovement.AddWood(-WaterVesselUpgradeCost);
             playerMovement.IncreaseWaterMaxBy(40);
+            
 
             WaterVesselUpgradeCost = WaterVesselUpgradeCost + 3;
             RefreshCostTexts();
+            if (WaterVesselUpgradeNumber==0) waterCheckbox1.sprite = checkboxFilled; ;
+            if (WaterVesselUpgradeNumber == 1) waterCheckbox2.sprite = checkboxFilled; ;
+            if (WaterVesselUpgradeNumber == 2)
+            {
+                waterCheckbox3.sprite = checkboxFilled; ;
+                WaterVesselCostText.text = "";
+                WaterCostSymbol.enabled = false;
+                waterUpgradeButton.gameObject.SetActive(false);
+            }
+
+            
+
             WaterVesselUpgradeNumber++;
+
         }
         
 
