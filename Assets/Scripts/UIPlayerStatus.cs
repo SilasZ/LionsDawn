@@ -13,6 +13,8 @@ public class UIPlayerStatus : MonoBehaviour
     int barLength = 100;
     int barHight = 100;
 
+    int day = 1;
+
     public void PlayerStatusUpdate(float hitpointsMax, float hitpointsNow, float fuelMax, float fuelNow)
     {
         float hitpointsInPercent = hitpointsNow / hitpointsMax;
@@ -32,12 +34,27 @@ public class UIPlayerStatus : MonoBehaviour
         StartCoroutine(StartGame());
     }
 
+    public void newDay()
+    {
+        day++;
+        startText.enabled = true;
+        startText.text = "Day " + day;
+        StartCoroutine(HideTextAfterTime(startText,2));
+    }
+
     public void ShowDeadText()
     {
         deadText.enabled=true;
 
         StartCoroutine(EndGame());
     }
+
+    IEnumerator HideTextAfterTime(Text text, int secounds)
+    {
+        yield return new WaitForSeconds(secounds);
+        text.enabled = false;
+    }
+
 
     IEnumerator StartGame()
     {
