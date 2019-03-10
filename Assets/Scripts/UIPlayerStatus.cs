@@ -13,6 +13,8 @@ public class UIPlayerStatus : MonoBehaviour
     int barLength = 100;
     int barHight = 100;
 
+    public Text woodCount;
+
     int day = 1;
 
     public void PlayerStatusUpdate(float hitpointsMax, float hitpointsNow, float fuelMax, float fuelNow)
@@ -47,6 +49,11 @@ public class UIPlayerStatus : MonoBehaviour
         deadText.enabled=true;
 
         StartCoroutine(EndGame());
+    }
+
+    public void NewWoodCount(int count)
+    {
+        woodCount.text =""+ count;
     }
 
     IEnumerator HideTextAfterTime(Text text, int secounds)

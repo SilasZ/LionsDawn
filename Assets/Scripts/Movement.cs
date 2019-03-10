@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     float hitpointsNow;
     public float waterMax = 100F;
     float waterNow;
+    int wood=0;
 	Rigidbody2D rb;
     UIPlayerStatus ui;
 
@@ -34,6 +35,12 @@ public class Movement : MonoBehaviour
         waterNow = waterMax;
         rb = GetComponent<Rigidbody2D>();
         ui = GetComponent<UIPlayerStatus>();
+    }
+
+    public void AddWood(int number)
+    {
+        wood = wood + number;
+        ui.NewWoodCount(wood);
     }
 
     void RefreshUI()
