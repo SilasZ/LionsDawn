@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class Movement : MonoBehaviour
 
     public AudioSource sound;
     public ParticleSystem steam;
+
+    //public Camera minimap;
 
     void OnCollisionEnter2D(Collision2D collision)  //Plays Sound Whenever collision detected
     {
@@ -41,6 +44,12 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         RefreshUI();
+        RefreshMinimapPosition();
+    }
+
+    private void RefreshMinimapPosition()
+    {
+        //minimap.transform.position = transform.position+new Vector3(0,0,-10);
     }
 
     public void FixedUpdate()
