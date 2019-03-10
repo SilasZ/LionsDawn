@@ -10,6 +10,7 @@ public class FindHidePositions : MonoBehaviour
     Vector2[] oldPositions;
     int i = 0;
     public GameObject rn;
+    public GameObject tent;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,8 @@ public class FindHidePositions : MonoBehaviour
         {
             GameObject r = Instantiate(rn, tf.position, Quaternion.identity);
             r.GetComponent<FindHidePositions>().referencePos = (Vector2)tf.position;
-            this.enabled = false;
+            Instantiate(tent, tf.position, Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1)));
+            Destroy(this.gameObject);
         }
         oldPositions[i%arrLength] = tf.position;
         i++;
