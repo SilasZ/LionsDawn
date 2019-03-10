@@ -7342,6 +7342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rn: {fileID: 443833451757933696, guid: 97177cd52e69c8643a85a990b4deb8c3, type: 3}
   numRunners: 10
+  numDescendingGenerations: 5
 --- !u!212 &1647705011
 SpriteRenderer:
   m_ObjectHideFlags: 0
