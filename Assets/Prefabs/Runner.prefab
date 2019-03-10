@@ -103,3 +103,4 @@ MonoBehaviour:
   human: {fileID: 1461416037085792052, guid: 391007a07c83a4947b594ac0f81abdae, type: 3}
   followingGenerations: 0
   minDist: 30
+  minCenterDist: 60
