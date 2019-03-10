@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIPlayerStatus : MonoBehaviour  
 {
     public RectTransform liveBar;
     public RectTransform fuelBar;
+    public Text deadText;
     int barLength = 100;
     int barHight = 100;
 
@@ -23,4 +25,18 @@ public class UIPlayerStatus : MonoBehaviour
         fuelBar.sizeDelta = new Vector2(lenghtFuelBarNow, barHight);
 
     }
+
+    public void ShowDeadText()
+    {
+        deadText.enabled=true;
+
+        StartCoroutine(EndGame());
+    }
+
+    IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(5);
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+    }
+
 }

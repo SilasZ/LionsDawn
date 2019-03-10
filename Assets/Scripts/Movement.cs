@@ -45,6 +45,12 @@ public class Movement : MonoBehaviour
 
     public void FixedUpdate()
 	{
+        if(hitpointsNow<1 || waterNow < 1)
+        {
+            ui.ShowDeadText();
+            steam.Stop();
+            return;
+        }
         
         waterNow = waterNow -0.005F;
         bool engineOn = false;
@@ -55,19 +61,21 @@ public class Movement : MonoBehaviour
 
 
 
-        steam.startSpeed = forwardspeed/4+3;
+        //steam.startSpeed = forwardspeed/4+3;
+        var main = steam.main;
+        main.startSpeed = forwardspeed / 4 + 3;
 
-        
+
         if (Input.GetKey("w")) {
     	  	rb.AddForce(transform.up * speed);
             engineOn = true;
             var emission = steam.emission;
-            emission.rate = 40;
+            emission.rateOverTime = 40;
         }
         else
         {
             var emission = steam.emission;
-            emission.rate = 10;
+            emission.rateOverTime = 10;
         }
 
  	   	if(Input.GetKey("s")) {
