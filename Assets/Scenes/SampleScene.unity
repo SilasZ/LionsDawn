@@ -7041,7 +7041,7 @@ MonoBehaviour:
   - {fileID: 3812664465310516269, guid: b2d9cf66b5c6b5b449421271270d808b, type: 3}
   - {fileID: 5476510283470393751, guid: 0f4b1e59c9a519343a9fabeefeced523, type: 3}
   - {fileID: 3041022475168888030, guid: 9f81ea3991bc9ae4c83a57cbd31cb17b, type: 3}
-  spawnRadius: 20
+  spawnRadius: 55
   perlinScale: 100
   dAngle: 0.05
 --- !u!4 &1433755216
@@ -7637,8 +7637,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rn: {fileID: 443833451757933696, guid: 97177cd52e69c8643a85a990b4deb8c3, type: 3}
-  numRunners: 10
-  numDescendingGenerations: 5
+  numRunners: 15
+  numDescendingGenerations: 10
+  spawnRadius: 52
 --- !u!212 &1647705011
 SpriteRenderer:
   m_ObjectHideFlags: 0
