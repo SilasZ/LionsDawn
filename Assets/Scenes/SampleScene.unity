@@ -6126,7 +6126,6 @@ GameObject:
   m_Component:
   - component: {fileID: 446298577}
   - component: {fileID: 446298576}
-  - component: {fileID: 446298575}
   m_Layer: 0
   m_Name: Minimap
   m_TagString: Untagged
@@ -6134,14 +6133,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &446298575
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446298574}
-  m_Enabled: 1
 --- !u!20 &446298576
 Camera:
   m_ObjectHideFlags: 0
