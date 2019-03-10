@@ -6,20 +6,22 @@ public class FindHidePositions : MonoBehaviour
 {
     public Transform tf;
     public Vector2 referencePos;
-    const int listLength = 30;
-    Vector2[] oldPositions = new Vector2[listLength];
+    public int arrLength;
+    Vector2[] oldPositions;
     int i = 0;
     public GameObject rn;
+    public GameObject tent;
     // Start is called before the first frame update
     void Start()
     {
-
+        oldPositions = new Vector2[arrLength];
     }
 
     bool ValidatePosition()
     {
-        Collider2D coll = Physics2D.OverlapCircle(tf.position, 1);  
-        return !(bool) coll;
+        Collider2D coll = Physics2D.OverlapCircle(tf.position, 1, 1);
+        Debug.Log((bool)coll);
+        return !(bool)coll;
     }
 
     void MCStep()
@@ -38,13 +40,14 @@ public class FindHidePositions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((i > listLength) && ((Vector2) tf.position - oldPositions[i%listLength]).magnitude < .2)
+        if ((i > arrLength) && ((Vector2) tf.position - oldPositions[i%arrLength]).magnitude < .2)
         {
             GameObject r = Instantiate(rn, tf.position, Quaternion.identity);
             r.GetComponent<FindHidePositions>().referencePos = (Vector2)tf.position;
-            this.enabled = false;
+            Instantiate(tent, tf.position, Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1)));
+            Destroy(this.gameObject);
         }
-        oldPositions[i%listLength] = tf.position;
+        oldPositions[i%arrLength] = tf.position;
         i++;
         MCStep();
     }
