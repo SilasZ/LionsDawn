@@ -7,6 +7,7 @@ public class ShipDock : MonoBehaviour
 {
     bool uiActive = false;
     public GameObject upgradeInterface;
+    public GameObject Player;
 
 
     // Start is called before the first frame update
@@ -18,7 +19,14 @@ public class ShipDock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if ((Player.transform.position - transform.position).magnitude > 20)
+        {
+            if (uiActive)
+            {
+                uiActive = false;
+                upgradeInterface.SetActive(false);
+            }
+        }
     }
 
     private void OnMouseDown()
