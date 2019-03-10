@@ -47,6 +47,12 @@ public class Movement : MonoBehaviour
         return false;
     }
 
+    public void IncreaseWaterMaxBy(float increase)
+    {
+        waterMax = waterMax + increase;
+        waterNow = waterNow + increase;
+    }
+
     public void AddWood(int number)
     {
         wood = wood + number;

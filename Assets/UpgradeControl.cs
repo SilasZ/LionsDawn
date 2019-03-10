@@ -27,9 +27,11 @@ public class UpgradeControl : MonoBehaviour
 
     public void UpgradeWaterVessel()
     {
-        if (/*(playerMovement.HasEnoughWood(WaterVesselUpgradeCost)) &&*/ (WaterVesselUpgradeNumber < 3))
+        if ((playerMovement.HasEnoughWood(WaterVesselUpgradeCost)) && (WaterVesselUpgradeNumber < 3))
         {
             playerMovement.AddWood(-WaterVesselUpgradeCost);
+            playerMovement.IncreaseWaterMaxBy(40);
+
             WaterVesselUpgradeCost = WaterVesselUpgradeCost + 3;
             RefreshCostTexts();
             WaterVesselUpgradeNumber++;
