@@ -5,27 +5,36 @@ using UnityEngine;
 public class Environment : MonoBehaviour
 {
     public int numObstacles;
-    public float mapSizeX;
-    public float mapSizeY;
+    public float mapSizeR;
     public float objectScaleFactor;
     public GameObject[] prefabsObstacle;
     public float spawnRadius;
     public float perlinScale;
+    public float dAngle;
 
     // Start is called before the first frame update
     void Start()
     {
         int i = 0;
+        float angle;
+        
         while (i < numObstacles)
         {
-            float xPos = Random.Range(-mapSizeX / 2, mapSizeX / 2);
-            float yPos = Random.Range(-mapSizeY / 2, mapSizeY / 2);
-            if (Mathf.Pow(xPos, 2) + Mathf.Pow(yPos, 2) < spawnRadius)
-            {
-                continue;
-            }
+            float r = Random.Range(spawnRadius, Mathf.Pow(mapSizeR, 3));
+            r = Mathf.Pow(r, (float)1 / 3);
+            angle = Random.Range(0, 2 * Mathf.PI);
+            float xPos = Mathf.Cos(angle) * r;
+            float yPos = Mathf.Sin(angle) * r;
+
 
             float noiseValue = Mathf.PerlinNoise(xPos / perlinScale, yPos / perlinScale);
+
+            if (r > (float) 3 / 4 * mapSizeR)
+            {
+                noiseValue += (4 * r / mapSizeR - 3) / 5;
+                noiseValue = Mathf.Clamp(noiseValue, 0, 1);
+            }
+
             if (noiseValue > 0.4)
             {
                 int index = Random.Range(0, prefabsObstacle.Length);
@@ -35,6 +44,19 @@ public class Environment : MonoBehaviour
                 tf.localScale = new Vector3(objectScaleFactor * noiseValue, objectScaleFactor * noiseValue, 1);
                 i++;
             }
+        }
+
+        angle = 0;
+        while (angle < 2 * Mathf.PI)
+        {
+            float xPos = Mathf.Cos(angle) * mapSizeR;
+            float yPos = Mathf.Sin(angle) * mapSizeR;
+            int index = Random.Range(0, prefabsObstacle.Length);
+            GameObject prefabObject = prefabsObstacle[index];
+            Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1));
+            Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, 0), orientation).transform;
+            tf.localScale = new Vector3(objectScaleFactor, objectScaleFactor, 1);
+            angle += dAngle;
         }
     }
 }
