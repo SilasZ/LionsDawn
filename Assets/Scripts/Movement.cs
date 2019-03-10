@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     public AudioSource sound;
     public ParticleSystem steam;
 
-    public Camera minimap;
+    //public Camera minimap;
 
     void OnCollisionEnter2D(Collision2D collision)  //Plays Sound Whenever collision detected
     {
@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour
 
     private void RefreshMinimapPosition()
     {
-        minimap.transform.position = transform.position+new Vector3(0,0,-10);
+        //minimap.transform.position = transform.position+new Vector3(0,0,-10);
     }
 
     public void FixedUpdate()
