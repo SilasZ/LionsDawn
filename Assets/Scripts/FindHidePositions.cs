@@ -8,9 +8,11 @@ public class FindHidePositions : MonoBehaviour
     public Vector2 referencePos;
     public int arrLength;
     Vector2[] oldPositions;
-    int i = 0;
+    public int i = 0;
     public GameObject rn;
     public GameObject tent;
+    public int followingGenerations;
+    public float minDist;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +44,23 @@ public class FindHidePositions : MonoBehaviour
     {
         if ((i > arrLength) && ((Vector2) tf.position - oldPositions[i%arrLength]).magnitude < .2)
         {
-            GameObject r = Instantiate(rn, tf.position, Quaternion.identity);
-            r.GetComponent<FindHidePositions>().referencePos = (Vector2)tf.position;
+            GameObject[] allTents = GameObject.FindGameObjectsWithTag("Tent");
+            foreach(GameObject tent in allTents)
+            {
+                if(((Vector2)(tent.transform.position - tf.position)).magnitude < minDist)
+                {
+                    this.GetComponent<FindHidePositions>().referencePos = tf.position;
+                    this.GetComponent<FindHidePositions>().i = 0;
+                    return;
+                }
+            }
+            if (followingGenerations > 0)
+            {
+                GameObject r = Instantiate(rn, tf.position, Quaternion.identity);
+                r.GetComponent<FindHidePositions>().referencePos = (Vector2)tf.position;
+                r.GetComponent<FindHidePositions>().followingGenerations = followingGenerations - 1;
+            }
+
             Instantiate(tent, tf.position, Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1)));
             Destroy(this.gameObject);
         }

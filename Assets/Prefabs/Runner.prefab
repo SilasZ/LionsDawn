@@ -95,5 +95,8 @@ MonoBehaviour:
   tf: {fileID: 443833451757933724}
   referencePos: {x: 0, y: 0}
   arrLength: 30
+  i: 0
   rn: {fileID: 443833451757933696}
   tent: {fileID: 2037451023728460974, guid: 85e5a3bae95f67f4d8b8953268bed15a, type: 3}
+  followingGenerations: 0
+  minDist: 30
