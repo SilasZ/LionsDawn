@@ -11,6 +11,7 @@ public class FindHidePositions : MonoBehaviour
     public int i = 0;
     public GameObject rn;
     public GameObject[] tents;
+    public GameObject human;
     public int followingGenerations;
     public float minDist;
     // Start is called before the first frame update
@@ -45,7 +46,11 @@ public class FindHidePositions : MonoBehaviour
                     r.GetComponent<FindHidePositions>().followingGenerations = followingGenerations - 1;
                 }
                 GameObject tent = tents[Random.Range(0, tents.Length)];
-                Instantiate(tent, tf.position, Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1)));
+                GameObject newTent = Instantiate(tent, tf.position, Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1)));
+                newTent.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+                float angle = Random.Range(0f, 2 * Mathf.PI);
+                Vector3 offset = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+                Instantiate(human, tf.position + offset, Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1)));
                 Destroy(this.gameObject);
                 return;
             }
