@@ -9,6 +9,7 @@ public class UIPlayerStatus : MonoBehaviour
     public RectTransform liveBar;
     public RectTransform fuelBar;
     public Text deadText;
+    public Text startText;
     int barLength = 100;
     int barHight = 100;
 
@@ -26,6 +27,11 @@ public class UIPlayerStatus : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        StartCoroutine(StartGame());
+    }
+
     public void ShowDeadText()
     {
         deadText.enabled=true;
@@ -33,9 +39,15 @@ public class UIPlayerStatus : MonoBehaviour
         StartCoroutine(EndGame());
     }
 
+    IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(4);
+        startText.enabled = false;
+    }
+
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 
