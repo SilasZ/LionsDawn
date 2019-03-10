@@ -41,6 +41,11 @@ public class Movement : MonoBehaviour
         ui.PlayerStatusUpdate(hitpointsMax, hitpointsNow, waterMax, waterNow);
     }
 
+    public void RefillWaterTank()
+    {
+        waterNow = waterMax;
+    }
+
     private void Update()
     {
         RefreshUI();
