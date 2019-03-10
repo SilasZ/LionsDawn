@@ -94,4 +94,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tf: {fileID: 443833451757933724}
   referencePos: {x: 0, y: 0}
+  arrLength: 30
   rn: {fileID: 443833451757933696}
