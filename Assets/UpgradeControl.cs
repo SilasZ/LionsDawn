@@ -11,6 +11,7 @@ public class UpgradeControl : MonoBehaviour
     public Text WaterVesselCostText;
 
     int WaterVesselUpgradeCost = 3;
+    int WaterVesselUpgradeNumber = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +27,14 @@ public class UpgradeControl : MonoBehaviour
 
     public void UpgradeWaterVessel()
     {
-        playerMovement.AddWood(-WaterVesselUpgradeCost);
-        WaterVesselUpgradeCost = WaterVesselUpgradeCost + 3;
-        RefreshCostTexts();
+        if (/*(playerMovement.HasEnoughWood(WaterVesselUpgradeCost)) &&*/ (WaterVesselUpgradeNumber < 3))
+        {
+            playerMovement.AddWood(-WaterVesselUpgradeCost);
+            WaterVesselUpgradeCost = WaterVesselUpgradeCost + 3;
+            RefreshCostTexts();
+            WaterVesselUpgradeNumber++;
+        }
+        
 
     }
 

@@ -37,6 +37,16 @@ public class Movement : MonoBehaviour
         ui = GetComponent<UIPlayerStatus>();
     }
 
+    public bool HasEnoughWood(int woodCount)
+    {
+        if (wood >= woodCount)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public void AddWood(int number)
     {
         wood = wood + number;
