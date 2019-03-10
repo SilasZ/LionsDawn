@@ -20,7 +20,7 @@ public class Environment : MonoBehaviour
         
         while (i < numObstacles)
         {
-            float r = Random.Range(spawnRadius, Mathf.Pow(mapSizeR, 3));
+            float r = Random.Range(Mathf.Pow(spawnRadius, 3), Mathf.Pow(mapSizeR, 3));
             r = Mathf.Pow(r, (float)1 / 3);
             angle = Random.Range(0, 2 * Mathf.PI);
             float xPos = Mathf.Cos(angle) * r;

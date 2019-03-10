@@ -5515,7 +5515,6 @@ MonoBehaviour:
   waterMax: 100
   sound: {fileID: 1868210643}
   steam: {fileID: 267276996}
-  minimap: {fileID: 0}
 --- !u!60 &1018007125
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5759,14 +5758,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89276a472e7dedf43b9d3d2aa765c877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numObstacles: 350
+  numObstacles: 500
   mapSizeR: 500
   objectScaleFactor: 5
   prefabsObstacle:
   - {fileID: 3812664465310516269, guid: b2d9cf66b5c6b5b449421271270d808b, type: 3}
   - {fileID: 5476510283470393751, guid: 0f4b1e59c9a519343a9fabeefeced523, type: 3}
   - {fileID: 3041022475168888030, guid: 9f81ea3991bc9ae4c83a57cbd31cb17b, type: 3}
-  spawnRadius: 2500
+  spawnRadius: 20
   perlinScale: 100
   dAngle: 0.05
 --- !u!4 &1433755216
