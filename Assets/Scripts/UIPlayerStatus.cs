@@ -10,8 +10,8 @@ public class UIPlayerStatus : MonoBehaviour
     public RectTransform fuelBar;
     public Text deadText;
     public Text startText;
-    int barLength = 100;
-    int barHight = 100;
+    int barLength = 380;
+    int barHight = 30;
 
     public Text woodCount;
 
