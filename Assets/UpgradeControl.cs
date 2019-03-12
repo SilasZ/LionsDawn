@@ -37,10 +37,10 @@ public class UpgradeControl : MonoBehaviour
         if ((playerMovement.HasEnoughWood(WaterVesselUpgradeCost)) && (WaterVesselUpgradeNumber < 3))
         {
             playerMovement.AddWood(-WaterVesselUpgradeCost);
-            playerMovement.IncreaseWaterMaxBy(40);
+            playerMovement.IncreaseWaterMaxBy(50);
             
 
-            WaterVesselUpgradeCost = WaterVesselUpgradeCost + 3;
+            WaterVesselUpgradeCost = WaterVesselUpgradeCost + 2;
             RefreshCostTexts();
             if (WaterVesselUpgradeNumber==0) waterCheckbox1.sprite = checkboxFilled; ;
             if (WaterVesselUpgradeNumber == 1) waterCheckbox2.sprite = checkboxFilled; ;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ShipDock : MonoBehaviour
 
@@ -31,15 +32,18 @@ public class ShipDock : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (uiActive)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            uiActive = false;
-            upgradeInterface.SetActive(false);
-        }
-        else
-        {
-            uiActive = true;
-            upgradeInterface.SetActive(true);
-        }
+            if (uiActive)
+            {
+                uiActive = false;
+                upgradeInterface.SetActive(false);
+            }
+            else
+            {
+                uiActive = true;
+                upgradeInterface.SetActive(true);
+            }
+        } 
     }
 }
