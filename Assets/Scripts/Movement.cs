@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     float hitpointsNow;
     public float waterMax = 100F;
     float waterNow;
-    int wood=0;
+    int wood=100;
 	Rigidbody2D rb;
     UIPlayerStatus ui;
 
