@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class ShipDock : MonoBehaviour
 
 {
-    bool uiActive = false;
     public GameObject upgradeInterface;
     public GameObject Player;
 
@@ -22,9 +21,8 @@ public class ShipDock : MonoBehaviour
     {
         if ((Player.transform.position - transform.position).magnitude > 20)
         {
-            if (uiActive)
+            if (upgradeInterface.activeSelf)
             {
-                uiActive = false;
                 upgradeInterface.SetActive(false);
             }
         }
@@ -34,14 +32,12 @@ public class ShipDock : MonoBehaviour
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            if (uiActive)
+            if (upgradeInterface.activeSelf)
             {
-                uiActive = false;
                 upgradeInterface.SetActive(false);
             }
             else
             {
-                uiActive = true;
                 upgradeInterface.SetActive(true);
             }
         } 
