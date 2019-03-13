@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Twister : MonoBehaviour
 {
+    Movement player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<Movement>();
     }
 
     // Update is called once per frame
@@ -20,7 +21,11 @@ public class Twister : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponentInParent<Rigidbody2D>().AddTorque(3);
+            if (((Vector2) (other.GetComponent<Transform>().position - transform.position)).magnitude < 30)
+            {
+                other.GetComponentInParent<Rigidbody2D>().AddTorque(3);
+                player.DealDamage(.2f);
+            }
         }
     }
 }

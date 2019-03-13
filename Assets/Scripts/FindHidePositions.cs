@@ -59,7 +59,6 @@ public class FindHidePositions : MonoBehaviour
                 float angle = Random.Range(0f, 2 * Mathf.PI);
                 Vector3 offset = 1.5f * new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), -0.1f);
                 Instantiate(human, tf.position + offset, Quaternion.AngleAxis(Random.Range(0f, 360f), Vector3.forward));
-                Debug.Log(i);
                 Destroy(this.gameObject);
                 return;
             }
