@@ -18,6 +18,7 @@ public class UIPlayerStatus : MonoBehaviour
     public RectTransform fuelFrame;
     public Text deadText;
     public Text startText;
+    public Text crewCountText;
 
     int lifeBarLength;
     int lifeFrameLength;
@@ -81,6 +82,11 @@ public class UIPlayerStatus : MonoBehaviour
         startText.enabled = true;
         startText.text = "Day " + day;
         StartCoroutine(HideTextAfterTime(startText,2));
+    }
+
+    public void NewCrewCount(int crewNow, int crewMax)
+    {
+        crewCountText.text = crewNow + "/" + crewMax;
     }
 
     public void ShowDeadText()

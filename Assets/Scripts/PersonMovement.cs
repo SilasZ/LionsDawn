@@ -9,11 +9,12 @@ public class PersonMovement : MonoBehaviour
     public float beamRadius;
     public GameObject beam;
     private float maxDistance = 10;
+    Movement player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<Movement>();
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class PersonMovement : MonoBehaviour
     private void OnMouseDown()
     {
         StartCoroutine(Beam()); 
+        
     }
 
     private IEnumerator Beam()
@@ -37,6 +39,7 @@ public class PersonMovement : MonoBehaviour
             Instantiate(beam, nearestPlace.transform.position - Vector3.forward, Quaternion.identity);
             yield return new WaitForSeconds(0.3f);
             nearestPlace.GetComponent<Place>().AddPerson(this);
+            player.RefreshCrewNow();
         }      
     }
 }
