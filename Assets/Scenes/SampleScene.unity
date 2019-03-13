@@ -920,7 +920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267276993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.34, y: -3.58, z: -1}
+  m_LocalPosition: {x: -0.34, y: -3.58, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1018007128}
@@ -6761,7 +6761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409070018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8604,7 +8604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018007123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 267276994}
@@ -9542,6 +9542,7 @@ MonoBehaviour:
   spawnRadius: 1
   perlinScale: 100
   threshold: 0.5
+  z: -2
 --- !u!114 &1433755218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9564,6 +9565,7 @@ MonoBehaviour:
   spawnRadius: 0
   perlinScale: 100
   threshold: 0.7
+  z: -2
 --- !u!114 &1433755219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9586,6 +9588,7 @@ MonoBehaviour:
   spawnRadius: 0
   perlinScale: 100
   threshold: 0
+  z: -1
 --- !u!114 &1433755220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9608,6 +9611,7 @@ MonoBehaviour:
   spawnRadius: 0
   perlinScale: 100
   threshold: 0.3
+  z: -2
 --- !u!114 &1433755221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9628,6 +9632,7 @@ MonoBehaviour:
   spawnRadius: 25
   perlinScale: 100
   threshold: 0.2
+  z: -2
 --- !u!1 &1448568600
 GameObject:
   m_ObjectHideFlags: 0
@@ -11351,7 +11356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888576676}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2, z: -1}
+  m_LocalPosition: {x: 0, y: 2, z: -2}
   m_LocalScale: {x: 0.7609695, y: 0.76096976, z: 0.76096976}
   m_Children: []
   m_Father: {fileID: 1018007128}
