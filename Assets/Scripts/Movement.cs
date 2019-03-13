@@ -32,6 +32,16 @@ public class Movement : MonoBehaviour
         hitpointsNow = hitpointsNow - 1F*rb.velocity.magnitude;
     }
 
+    private void OnMouseDown()
+    {
+        var children = gameObject.GetComponentsInChildren<Transform>();
+        foreach (var child in children)
+        {
+            if (child.transform != transform)
+                child.gameObject.BroadcastMessage("OnMouseDown", options: SendMessageOptions.DontRequireReceiver);
+        }
+    }
+
     private void Start()
     {
         hitpointsNow = hitpointsMax;
