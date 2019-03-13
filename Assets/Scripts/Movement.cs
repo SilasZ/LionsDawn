@@ -55,7 +55,7 @@ public class Movement : MonoBehaviour
         SetPlacesOnStartValues();
         RefreshCrewMax();
 
-        AddWood(100);
+        AddWood(3);
     }
 
     void SetPlacesOnStartValues()
