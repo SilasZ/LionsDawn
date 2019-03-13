@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     float hitpointsNow;
     public float waterMax = 100F;
     float waterNow;
-    int wood=100;
+    int wood=0;
 	Rigidbody2D rb;
     UIPlayerStatus ui;
 
@@ -35,6 +35,8 @@ public class Movement : MonoBehaviour
         waterNow = waterMax;
         rb = GetComponent<Rigidbody2D>();
         ui = GetComponent<UIPlayerStatus>();
+
+        AddWood(100);
     }
 
     public bool HasEnoughWood(int woodCount)
@@ -51,6 +53,27 @@ public class Movement : MonoBehaviour
     {
         waterMax = waterMax + increase;
         waterNow = waterNow + increase;
+    }
+
+    public void IncreaseHullMaxBy(float increase)
+    {
+        hitpointsMax = hitpointsMax + increase;
+        hitpointsNow = hitpointsNow + increase;
+    }
+
+    public void IncreaseCrewMaxBy(int i)
+    {
+
+    }
+
+    public void AddCrowsNest()
+    {
+
+    }
+
+    public void RepairShipComplete()
+    {
+        hitpointsNow = hitpointsMax;
     }
 
     public void AddWood(int number)
