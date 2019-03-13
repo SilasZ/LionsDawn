@@ -17,6 +17,9 @@ public class Movement : MonoBehaviour
 	Rigidbody2D rb;
     UIPlayerStatus ui;
 
+    public int crewMax;
+    public int crewNow;
+
     public AudioSource sound;
     public ParticleSystem steam;
 
