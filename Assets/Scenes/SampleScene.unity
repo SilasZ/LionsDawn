@@ -8628,6 +8628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942a4c0c558d83c41920dd2eed464fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barStartLength: 300
   liveBar: {fileID: 1722466493}
   liveFrame: {fileID: 2132152318}
   fuelBar: {fileID: 1462602159}
@@ -9495,7 +9496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89276a472e7dedf43b9d3d2aa765c877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numObstacles: 500
+  numObstacles: 800
   mapSizeR: 500
   objectScaleFactor: 5
   prefabsObstacle:
@@ -9504,7 +9505,8 @@ MonoBehaviour:
   - {fileID: 3041022475168888030, guid: 9f81ea3991bc9ae4c83a57cbd31cb17b, type: 3}
   spawnRadius: 55
   perlinScale: 100
-  dAngle: 0.05
+  dAngle: 0.03
+  runnerSpawn: {fileID: 1647705009}
 --- !u!4 &1433755216
 Transform:
   m_ObjectHideFlags: 0
