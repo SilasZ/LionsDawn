@@ -52,6 +52,11 @@ public class Movement : MonoBehaviour
         AddWood(100);
     }
 
+    public void DealDamage(float damage)
+    {
+        hitpointsNow = hitpointsNow - damage;
+    }
+
     public bool HasEnoughWood(int woodCount)
     {
         if (wood >= woodCount)
@@ -78,7 +83,14 @@ public class Movement : MonoBehaviour
 
     public void IncreaseCrewMaxBy(int i)
     {
-
+        foreach(var place in GetComponentsInChildren<Place>())
+        {
+            if (!place.enabled)
+            {
+                place.enabled = true;
+                return;
+            }
+        }
     }
 
     public void AddCrowsNest()

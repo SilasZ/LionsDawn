@@ -715,6 +715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Place6
       objectReference: {fileID: 0}
+    - target: {fileID: 4386836358538378988, guid: 71ab34b1457717a4889c0c9a63bf2694,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4386836358538378990, guid: 71ab34b1457717a4889c0c9a63bf2694,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -937,6 +942,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Place4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386836358538378988, guid: 71ab34b1457717a4889c0c9a63bf2694,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4386836358538378990, guid: 71ab34b1457717a4889c0c9a63bf2694,
         type: 3}
@@ -6764,6 +6774,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Place8
       objectReference: {fileID: 0}
+    - target: {fileID: 4386836358538378988, guid: 71ab34b1457717a4889c0c9a63bf2694,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4386836358538378990, guid: 71ab34b1457717a4889c0c9a63bf2694,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6986,6 +7001,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Place7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386836358538378988, guid: 71ab34b1457717a4889c0c9a63bf2694,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4386836358538378990, guid: 71ab34b1457717a4889c0c9a63bf2694,
         type: 3}
@@ -9335,7 +9355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
+  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -10569,6 +10589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Place5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386836358538378988, guid: 71ab34b1457717a4889c0c9a63bf2694,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4386836358538378990, guid: 71ab34b1457717a4889c0c9a63bf2694,
         type: 3}
