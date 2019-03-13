@@ -5,6 +5,7 @@ using UnityEngine;
 public class Twister : MonoBehaviour
 {
     Movement player;
+    public float damageDistance;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class Twister : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (((Vector2) (other.GetComponent<Transform>().position - transform.position)).magnitude < 30)
+            if (((Vector2) (other.GetComponent<Transform>().position - transform.position)).magnitude < damageDistance)
             {
                 other.GetComponentInParent<Rigidbody2D>().AddTorque(3);
                 player.DealDamage(.2f);
