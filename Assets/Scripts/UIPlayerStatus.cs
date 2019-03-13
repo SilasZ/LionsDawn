@@ -4,26 +4,56 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public enum Bars {life, water};
+
 public class UIPlayerStatus : MonoBehaviour  
 {
+
+    //Zeilenenden geändert auf windows CR LF
+    public int barStartLength = 300;
+    int barHight = 30;
     public RectTransform liveBar;
+    public RectTransform liveFrame;
     public RectTransform fuelBar;
+    public RectTransform fuelFrame;
     public Text deadText;
     public Text startText;
-    int barLength = 100;
-    int barHight = 100;
+
+    int lifeBarLength;
+    int lifeFrameLength;
+    int fuelBarLength;
+    int fuelFrameLength;
 
     public Text woodCount;
 
     int day = 1;
+
+    public void IncreaseBarByPercentOfStartValue(Bars bar,float percent)
+    {
+        float multiplier = percent / 100;
+        float increase = barStartLength * multiplier;
+
+        if(bar == Bars.life)
+        {
+            lifeBarLength = lifeBarLength + (int)increase;
+            lifeFrameLength = lifeFrameLength + (int)increase;
+            liveFrame.sizeDelta = new Vector2(lifeFrameLength, barHight+10);
+        }
+        if(bar == Bars.water)
+        {
+            fuelBarLength = fuelBarLength + (int)increase;
+            fuelFrameLength = fuelFrameLength + (int)increase;
+            fuelFrame.sizeDelta = new Vector2(fuelFrameLength, barHight+10);
+        }  
+    }
 
     public void PlayerStatusUpdate(float hitpointsMax, float hitpointsNow, float fuelMax, float fuelNow)
     {
         float hitpointsInPercent = hitpointsNow / hitpointsMax;
         float fuelInPercent = fuelNow / fuelMax;
 
-        float lenghtLiveBarNow = barLength * hitpointsInPercent;
-        float lenghtFuelBarNow = barLength * fuelInPercent;
+        float lenghtLiveBarNow = lifeBarLength * hitpointsInPercent;
+        float lenghtFuelBarNow = fuelBarLength * fuelInPercent;
 
 
         liveBar.sizeDelta = new Vector2(lenghtLiveBarNow, barHight);
@@ -34,6 +64,15 @@ public class UIPlayerStatus : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartGame());
+        setStartBarSizes();
+    }
+
+    void setStartBarSizes()
+    {
+        lifeBarLength = barStartLength - 5;
+        lifeFrameLength = barStartLength;
+        fuelBarLength = barStartLength - 5;
+        fuelFrameLength = barStartLength;
     }
 
     public void newDay()
