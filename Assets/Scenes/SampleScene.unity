@@ -9477,6 +9477,7 @@ GameObject:
   - component: {fileID: 1433755218}
   - component: {fileID: 1433755220}
   - component: {fileID: 1433755219}
+  - component: {fileID: 1433755221}
   m_Layer: 0
   m_Name: Map Generator
   m_TagString: Untagged
@@ -9606,6 +9607,26 @@ MonoBehaviour:
   spawnRadius: 0
   perlinScale: 100
   threshold: 0.3
+--- !u!114 &1433755221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433755214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e543b74f737b7e14db443c0be540488a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numObstacles: 100
+  mapSizeR: 500
+  objectScaleFactor: 1.5
+  prefabsObstacle:
+  - {fileID: 3418519915235194969, guid: 6adbd3bb63549f448951f2d77e1e14c3, type: 3}
+  spawnRadius: 25
+  perlinScale: 100
+  threshold: 0.2
 --- !u!1 &1448568600
 GameObject:
   m_ObjectHideFlags: 0
