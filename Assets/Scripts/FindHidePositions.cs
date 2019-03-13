@@ -18,6 +18,7 @@ public class FindHidePositions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int j = 0;
         oldPositions = new Vector2[arrLength];
         while (true)
         {
@@ -58,11 +59,18 @@ public class FindHidePositions : MonoBehaviour
                 float angle = Random.Range(0f, 2 * Mathf.PI);
                 Vector3 offset = 1.5f * new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), -0.1f);
                 Instantiate(human, tf.position + offset, Quaternion.AngleAxis(Random.Range(0f, 360f), Vector3.forward));
+                Debug.Log(i);
                 Destroy(this.gameObject);
                 return;
             }
             oldPositions[i % arrLength] = tf.position;
             i++;
+            j++;
+            if (j > 6000)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
             MCStep();
         }
     }
