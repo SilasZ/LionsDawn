@@ -11,6 +11,7 @@ public class Environment : MonoBehaviour
     public float spawnRadius;
     public float perlinScale;
     public float dAngle;
+    public GameObject runnerSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class Environment : MonoBehaviour
                 int index = Random.Range(0, prefabsObstacle.Length);
                 GameObject prefabObject = prefabsObstacle[index];
                 Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1));
-                Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, 0), orientation).transform;
+                Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, -1), orientation).transform;
                 tf.localScale = new Vector3(objectScaleFactor * noiseValue, objectScaleFactor * noiseValue, 1);
                 i++;
             }
@@ -54,9 +55,10 @@ public class Environment : MonoBehaviour
             int index = Random.Range(0, prefabsObstacle.Length);
             GameObject prefabObject = prefabsObstacle[index];
             Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1));
-            Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, 0), orientation).transform;
+            Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, -1), orientation).transform;
             tf.localScale = new Vector3(objectScaleFactor, objectScaleFactor, 1);
             angle += dAngle;
         }
+        runnerSpawn.GetComponent<CreateRunners>().Create();
     }
 }
