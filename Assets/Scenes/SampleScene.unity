@@ -7797,7 +7797,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 20, y: -95}
-  m_SizeDelta: {x: 400, y: 40}
+  m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &686810031
 MonoBehaviour:
@@ -8629,7 +8629,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveBar: {fileID: 1722466493}
+  liveFrame: {fileID: 2132152318}
   fuelBar: {fileID: 1462602159}
+  fuelFrame: {fileID: 686810030}
   deadText: {fileID: 362299428}
   startText: {fileID: 1614367652}
   woodCount: {fileID: 2107438173}
@@ -9887,8 +9889,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -95}
-  m_SizeDelta: {x: 380, y: 30}
+  m_AnchoredPosition: {x: 25, y: -95}
+  m_SizeDelta: {x: 295, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1462602160
 MonoBehaviour:
@@ -10595,8 +10597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -40}
-  m_SizeDelta: {x: 380, y: 30}
+  m_AnchoredPosition: {x: 25, y: -40}
+  m_SizeDelta: {x: 295, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1722466494
 MonoBehaviour:
@@ -16722,7 +16724,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 20, y: -40}
-  m_SizeDelta: {x: 400, y: 40}
+  m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2132152319
 MonoBehaviour:

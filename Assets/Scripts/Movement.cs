@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ui = GetComponent<UIPlayerStatus>();
 
-        AddWood(3);
+        AddWood(100);
     }
 
     public bool HasEnoughWood(int woodCount)
@@ -53,12 +53,14 @@ public class Movement : MonoBehaviour
     {
         waterMax = waterMax + increase;
         waterNow = waterNow + increase;
+        ui.IncreaseBarByPercentOfStartValue(Bars.water, 50);
     }
 
     public void IncreaseHullMaxBy(float increase)
     {
         hitpointsMax = hitpointsMax + increase;
         hitpointsNow = hitpointsNow + increase;
+        ui.IncreaseBarByPercentOfStartValue(Bars.life, 50);
     }
 
     public void IncreaseCrewMaxBy(int i)
