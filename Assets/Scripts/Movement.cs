@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ui = GetComponent<UIPlayerStatus>();
 
-        AddWood(100);
+        AddWood(3);
     }
 
     public bool HasEnoughWood(int woodCount)
