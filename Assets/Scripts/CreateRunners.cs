@@ -9,8 +9,8 @@ public class CreateRunners : MonoBehaviour
     public int numRunners;
     public int numDescendingGenerations;
     public int spawnRadius;
-    // Start is called before the first frame update
-    void Start()
+
+    public void Create()
     {
         float angle = 0;
         float dAngle = 2 * Mathf.PI / numRunners;
@@ -22,10 +22,5 @@ public class CreateRunners : MonoBehaviour
             angle += dAngle;
             i++;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

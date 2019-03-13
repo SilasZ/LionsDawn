@@ -11,6 +11,7 @@ public class Environment : MonoBehaviour
     public float spawnRadius;
     public float perlinScale;
     public float dAngle;
+    public GameObject runnerSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -58,5 +59,6 @@ public class Environment : MonoBehaviour
             tf.localScale = new Vector3(objectScaleFactor, objectScaleFactor, 1);
             angle += dAngle;
         }
+        runnerSpawn.GetComponent<CreateRunners>().Create();
     }
 }
