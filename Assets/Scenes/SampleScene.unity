@@ -8302,13 +8302,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722841016}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86e0a3dd069fb4c4b84ef5e224a5bdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minVel: 0.1
-  maxVel: 0.3
+  maxVel: 0.2
   minR: 100
   maxR: 450
 --- !u!1 &733646568
