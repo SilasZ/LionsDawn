@@ -18,6 +18,7 @@ public class FindHidePositions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int j = 0;
         oldPositions = new Vector2[arrLength];
         while (true)
         {
@@ -63,6 +64,12 @@ public class FindHidePositions : MonoBehaviour
             }
             oldPositions[i % arrLength] = tf.position;
             i++;
+            j++;
+            if (j > 6000)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
             MCStep();
         }
     }

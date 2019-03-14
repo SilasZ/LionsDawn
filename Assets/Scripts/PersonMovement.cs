@@ -1,19 +1,50 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum Profession {normalDude, lookOut, sailor};
+
 public class PersonMovement : MonoBehaviour
 {
+    public Sprite normalDudeSprite;
+    public Sprite lookOutSprite;
+    public Sprite sailorSprite;
 
     public float beamRadius;
     public GameObject beam;
     private float maxDistance = 10;
+    Movement player;
+    Profession profession;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<Movement>();
+        SetProfession();
+    }
+
+    public Profession GetProfession()
+    {
+        return profession;
+    }
+    
+    private void SetProfession()
+    {
+        float f = UnityEngine.Random.Range(0, System.Enum.GetValues(typeof(Profession)).Length);
+        if (f < 3) profession = Profession.sailor;
+        if (f < 2) profession = Profession.lookOut;
+        if (f < 1) profession = Profession.normalDude;
+
+        SetProfessionImage();
+    }
+
+    private void SetProfessionImage()
+    {
+        if (profession == Profession.normalDude) GetComponent<SpriteRenderer>().sprite = normalDudeSprite;
+        if (profession == Profession.lookOut) GetComponent<SpriteRenderer>().sprite=lookOutSprite;
+        if (profession == Profession.sailor) GetComponent<SpriteRenderer>().sprite = sailorSprite;
     }
 
     // Update is called once per frame
@@ -25,6 +56,7 @@ public class PersonMovement : MonoBehaviour
     private void OnMouseDown()
     {
         StartCoroutine(Beam()); 
+        
     }
 
     private IEnumerator Beam()
@@ -37,6 +69,7 @@ public class PersonMovement : MonoBehaviour
             Instantiate(beam, nearestPlace.transform.position - Vector3.forward, Quaternion.identity);
             yield return new WaitForSeconds(0.3f);
             nearestPlace.GetComponent<Place>().AddPerson(this);
+            player.RefreshCrewNow();
         }      
     }
 }

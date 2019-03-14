@@ -17,10 +17,16 @@ public class Movement : MonoBehaviour
 	Rigidbody2D rb;
     UIPlayerStatus ui;
 
+    public int crewMax;
+    int crewNow=0;
+
     public AudioSource sound;
     public ParticleSystem steam;
 
     public Camera minimap;
+
+
+    Place[] places;
 
     void OnCollisionEnter2D(Collision2D collision)  //Plays Sound Whenever collision detected
     {
@@ -46,7 +52,30 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ui = GetComponent<UIPlayerStatus>();
 
-        AddWood(100);
+        SetPlacesOnStartValues();
+        RefreshCrewMax();
+
+        AddWood(3);
+    }
+
+    void SetPlacesOnStartValues()
+    {
+        places = GetComponentsInChildren<Place>();
+
+        int i=0;
+        foreach (Place place in places)
+        {
+            i++;
+            if (i > 3)
+            {
+                place.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void DealDamage(float damage)
+    {
+        hitpointsNow = hitpointsNow - damage;
     }
 
     public bool HasEnoughWood(int woodCount)
@@ -75,7 +104,42 @@ public class Movement : MonoBehaviour
 
     public void IncreaseCrewMaxBy(int i)
     {
+        foreach(Place place in places)
+        {
+            if (!place.gameObject.activeSelf)
+            {
+                place.gameObject.SetActive(true);
+                RefreshCrewMax();
+                return;
+            }
+        }
+    }
 
+    void RefreshCrewMax()
+    {
+        int i=0;
+        foreach (Place place in places)
+        {
+            if (place.gameObject.activeSelf) i++;
+        }
+        crewMax = i;
+        RefreshCrewUINumber();
+    }
+
+    public void RefreshCrewNow()
+    {
+        int i = 0;
+        foreach (Place place in places)
+        {
+            if ((place.gameObject.activeSelf)&&(place.gameObject.GetComponentInChildren<PersonMovement>())) i++;
+        }
+        crewNow = i;
+        RefreshCrewUINumber();
+    }
+
+    void RefreshCrewUINumber()
+    {
+        ui.NewCrewCount(crewNow, crewMax);
     }
 
     public void AddCrowsNest()
