@@ -6699,7 +6699,7 @@ GameObject:
   - component: {fileID: 409070020}
   - component: {fileID: 409070019}
   m_Layer: 0
-  m_Name: Patternmatch-Test6
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9542,7 +9542,7 @@ MonoBehaviour:
   spawnRadius: 1
   perlinScale: 100
   threshold: 0.5
-  z: -2
+  z: -3
 --- !u!114 &1433755218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9564,8 +9564,8 @@ MonoBehaviour:
   - {fileID: 8597089303171716676, guid: 43f8329de76db8b41a72943df8cc3182, type: 3}
   spawnRadius: 0
   perlinScale: 100
-  threshold: 0.7
-  z: -2
+  threshold: 0.5
+  z: -3
 --- !u!114 &1433755219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9611,7 +9611,7 @@ MonoBehaviour:
   spawnRadius: 0
   perlinScale: 100
   threshold: 0.3
-  z: -2
+  z: -3
 --- !u!114 &1433755221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9632,7 +9632,7 @@ MonoBehaviour:
   spawnRadius: 25
   perlinScale: 100
   threshold: 0.2
-  z: -2
+  z: -3
 --- !u!1 &1448568600
 GameObject:
   m_ObjectHideFlags: 0
@@ -16313,7 +16313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897009386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.28, y: 7.9, z: 0}
+  m_LocalPosition: {x: -12.28, y: 7.9, z: -2}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -24,6 +24,7 @@ public class LionStatues : MonoBehaviour
 
     private void OnMouseDown()
     {
+        
         if (!EventSystem.current.IsPointerOverGameObject())
         {
             endDay();

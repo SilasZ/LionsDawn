@@ -40,8 +40,8 @@ public class Environment : MonoBehaviour
             {
                 int index = Random.Range(0, prefabsObstacle.Length);
                 GameObject prefabObject = prefabsObstacle[index];
-                Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1));
-                Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, -1), orientation).transform;
+                Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), Vector3.forward);
+                Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, -2), orientation).transform;
                 tf.localScale = new Vector3(objectScaleFactor * noiseValue, objectScaleFactor * noiseValue, 1);
                 i++;
             }
@@ -54,11 +54,18 @@ public class Environment : MonoBehaviour
             float yPos = Mathf.Sin(angle) * mapSizeR;
             int index = Random.Range(0, prefabsObstacle.Length);
             GameObject prefabObject = prefabsObstacle[index];
-            Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1));
-            Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, -1), orientation).transform;
+            Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), Vector3.forward);
+            Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, -2), orientation).transform;
             tf.localScale = new Vector3(objectScaleFactor, objectScaleFactor, 1);
             angle += dAngle;
         }
         runnerSpawn.GetComponent<CreateRunners>().Create();
+        Invoke("Decorate", 1); //Dirty Hack. Do not try this at home!
     }
+
+    private void Decorate()
+    {
+        foreach (var deco in FindObjectsOfType<Decoration>()) deco.Decorate();
+    }
+
 }

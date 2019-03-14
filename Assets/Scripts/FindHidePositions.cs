@@ -35,7 +35,7 @@ public class FindHidePositions : MonoBehaviour
                         break;
                     }
                 }
-                if (((Vector2) tf.position).magnitude < minCenterDist)
+                if (((Vector2)tf.position).magnitude < minCenterDist)
                 {
                     this.GetComponent<FindHidePositions>().referencePos = tf.position;
                     this.GetComponent<FindHidePositions>().i = 0;
@@ -49,7 +49,7 @@ public class FindHidePositions : MonoBehaviour
                 if (followingGenerations > 0)
                 {
                     GameObject r = Instantiate(rn, tf.position, Quaternion.identity);
-                    r.GetComponent<FindHidePositions>().referencePos = (Vector2)tf.position;
+                    r.GetComponent<FindHidePositions>().referencePos = tf.position;
                     r.GetComponent<FindHidePositions>().followingGenerations = followingGenerations - 1;
                 }
                 GameObject tent = tents[Random.Range(0, tents.Length)];

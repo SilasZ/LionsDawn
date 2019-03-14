@@ -14,10 +14,11 @@ public class Decoration : MonoBehaviour
     public int z;
 
     // Start is called before the first frame update
-    void Start()
+    public void Decorate()
     {
         int i = 0;
         float angle;
+        int perlinSeed = Random.Range(0, 10000);
 
         while (i < numObstacles)
         {
@@ -27,14 +28,14 @@ public class Decoration : MonoBehaviour
             float xPos = Mathf.Cos(angle) * r;
             float yPos = Mathf.Sin(angle) * r;
 
+            
+            float noiseValue = Mathf.PerlinNoise(perlinSeed + xPos / perlinScale, perlinSeed + yPos / perlinScale);
 
-            float noiseValue = Mathf.PerlinNoise(xPos / perlinScale, yPos / perlinScale);
-
-            if (noiseValue > threshold)
+            if (noiseValue > threshold && !Physics2D.OverlapCircle(new Vector3(xPos, yPos, z), objectScaleFactor, 1))
             {
                 int index = Random.Range(0, prefabsObstacle.Length);
                 GameObject prefabObject = prefabsObstacle[index];
-                Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), new Vector3(0, 0, 1));
+                Quaternion orientation = Quaternion.AngleAxis(Random.Range(0f, 360f), Vector3.forward);
                 Transform tf = Instantiate(prefabObject, new Vector3(xPos, yPos, z), orientation).transform;
                 tf.localScale = new Vector3(objectScaleFactor, objectScaleFactor, 1);
                 i++;
