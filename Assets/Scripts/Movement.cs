@@ -6,8 +6,10 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-
+    Camera cam;
+    float cameraStartSize;
     public float speed = 20;
+    float standardSpeed;
     public float rotspeed = 10f;
     public float hitpointsMax = 100F;
     float hitpointsNow;
@@ -16,6 +18,8 @@ public class Movement : MonoBehaviour
     int wood=0;
 	Rigidbody2D rb;
     UIPlayerStatus ui;
+
+    
 
     public int crewMax;
     int crewNow=0;
@@ -44,6 +48,10 @@ public class Movement : MonoBehaviour
 
         SetPlacesOnStartValues();
         RefreshCrewMax();
+
+        standardSpeed = speed;
+        cam = GetComponentInChildren<Camera>();
+        cameraStartSize = cam.orthographicSize;
 
         AddWood(3);
     }
@@ -125,11 +133,24 @@ public class Movement : MonoBehaviour
         }
         crewNow = i;
         RefreshCrewUINumber();
+        RefreshProfessionBoni();
     }
 
     void RefreshCrewUINumber()
     {
         ui.NewCrewCount(crewNow, crewMax);
+    }
+
+    void RefreshProfessionBoni()
+    {
+        speed = standardSpeed;
+        cam.orthographicSize = cameraStartSize;
+
+        foreach(PersonMovement person in GetComponentsInChildren<PersonMovement>())
+        {
+            speed = speed + person.GetSpeedBonus();
+            cam.orthographicSize = cam.orthographicSize + person.GetVisionBonus();
+        }
     }
 
     public void AddCrowsNest()
