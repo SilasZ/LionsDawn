@@ -16,7 +16,11 @@ public class PersonMovement : MonoBehaviour
     public GameObject beam;
     private float maxDistance = 10;
     Movement player;
+
     Profession profession;
+    float speedBonus = 0;
+    float visionBonus = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +42,7 @@ public class PersonMovement : MonoBehaviour
         if (f < 1) profession = Profession.normalDude;
 
         SetProfessionImage();
+        SetProfessionBonus();
     }
 
     private void SetProfessionImage()
@@ -46,6 +51,24 @@ public class PersonMovement : MonoBehaviour
         if (profession == Profession.lookOut) GetComponent<SpriteRenderer>().sprite=lookOutSprite;
         if (profession == Profession.sailor) GetComponent<SpriteRenderer>().sprite = sailorSprite;
     }
+
+    void SetProfessionBonus()
+    {
+        if (profession == Profession.sailor) speedBonus = 5;
+        if (profession == Profession.lookOut) visionBonus = 2;
+    }
+
+    public float GetSpeedBonus()
+    {
+        return speedBonus;
+    }
+    public float GetVisionBonus()
+    {
+        return visionBonus;
+    }
+
+
+
 
     // Update is called once per frame
     void Update()
