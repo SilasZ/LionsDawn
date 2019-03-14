@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Profession {normalDude, lookOut, sailor};
 
@@ -18,8 +19,12 @@ public class PersonMovement : MonoBehaviour
     Movement player;
 
     Profession profession;
-    float speedBonus = 0;
-    float visionBonus = 0;
+    float speedBonusAll = 0;
+    float speedBonusSailor = 4;
+    float visionBonusAll = 0;
+    float visionBonusLookOut = 2;
+
+    public Text pickUpText;
     
 
     // Start is called before the first frame update
@@ -54,17 +59,17 @@ public class PersonMovement : MonoBehaviour
 
     void SetProfessionBonus()
     {
-        if (profession == Profession.sailor) speedBonus = 5;
-        if (profession == Profession.lookOut) visionBonus = 2;
+        if (profession == Profession.sailor) speedBonusAll = speedBonusSailor;
+        if (profession == Profession.lookOut) visionBonusAll = visionBonusLookOut;
     }
 
     public float GetSpeedBonus()
     {
-        return speedBonus;
+        return speedBonusAll;
     }
     public float GetVisionBonus()
     {
-        return visionBonus;
+        return visionBonusAll;
     }
 
 
@@ -92,7 +97,28 @@ public class PersonMovement : MonoBehaviour
             Instantiate(beam, nearestPlace.transform.position - Vector3.forward, Quaternion.identity);
             yield return new WaitForSeconds(0.3f);
             nearestPlace.GetComponent<Place>().AddPerson(this);
+
             player.RefreshCrewNow();
+            StartCoroutine(SayPickUpText());
         }      
+    }
+
+    float pickUpTextShowingTime = 5;
+    private IEnumerator SayPickUpText()
+    {
+        if (GetComponentInParent<Movement>())
+        {
+            pickUpText.enabled = true;
+            GetComponentInChildren<Canvas>().transform.rotation = GetComponentInParent<Movement>().transform.rotation;
+            yield return new WaitForSeconds(pickUpTextShowingTime);
+            pickUpText.enabled = false;
+            pickUpTextShowingTime = 3;
+            pickUpText.text = "John, Sailor (Speed +4)";
+        }
+        else
+        {
+            pickUpText.enabled = false;
+        }
+        //yield return new WaitForSeconds(0);
     }
 }
