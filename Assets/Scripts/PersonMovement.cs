@@ -19,20 +19,24 @@ public class PersonMovement : MonoBehaviour
     Movement player;
 
     Profession profession;
-    float speedBonusAll = 0;
-    float speedBonusSailor = 3;
-    float visionBonusAll = 0;
-    float visionBonusLookOut = 2;
+    int speedBonusAll = 0;
+    int speedBonusSailor = 4;
+    int visionBonusAll = 0;
+    int visionBonusLookOut = 3;
 
     public Text pickUpText;
     String Name="";
     String RescueSentence="";
     String ProfessionBonusInfo="";
+    String ProfessionText = "";
 
 
     // Start is called before the first frame update
     void Start()
     {
+        speedBonusSailor = UnityEngine.Random.Range(1,5);
+        visionBonusLookOut = UnityEngine.Random.Range(1, 4);
+
         player = FindObjectOfType<Movement>();
         SetProfession();
         SetStrings();
@@ -46,10 +50,13 @@ public class PersonMovement : MonoBehaviour
     
     private void SetProfession()
     {
-        int i = UnityEngine.Random.Range(0, System.Enum.GetValues(typeof(Profession)).Length);
-        if (i < 3) profession = Profession.Sailor;
+        int normalPersonMultiplier = 3;
+        int i = UnityEngine.Random.Range(0, (System.Enum.GetValues(typeof(Profession)).Length)+normalPersonMultiplier-1);
+
+        profession = Profession.NormalDude;
+
         if (i < 2) profession = Profession.LookOut;
-        if (i < 1) profession = Profession.NormalDude;
+        if (i < 1) profession = Profession.Sailor;
 
         SetProfessionImage();
         SetProfessionBonus();
@@ -60,6 +67,7 @@ public class PersonMovement : MonoBehaviour
         SetName();
         SetRescueSentence();
         SetProfessionBonusInfo();
+        SetProfessionText();
     }
 
     void SetName()
@@ -67,6 +75,7 @@ public class PersonMovement : MonoBehaviour
         String[] names = new string[] {"Tom","John","Silas","Fabian","Basti","Lukas","Jan","Adrian","Julian","Philip","Neil","Hanson","Jake","Simon"};
         int i = UnityEngine.Random.Range(0, names.Length);
         Name = names[i];
+        if (profession != Profession.NormalDude) Name = Name + ",";
     }
 
     void SetRescueSentence()
@@ -96,9 +105,15 @@ public class PersonMovement : MonoBehaviour
         if (profession == Profession.LookOut) ProfessionBonusInfo = "(Vision +" + visionBonusLookOut+")";
     }
 
+    void SetProfessionText()
+    {
+        if (profession != Profession.NormalDude) ProfessionText = ""+profession;
+        if (profession == Profession.LookOut) ProfessionText = "Look-out";
+    }
+
     void SetPickUpText()
     {
-        pickUpText.text ="\""+RescueSentence+"\"\n"+Name+", " + profession + " "+ProfessionBonusInfo;
+        pickUpText.text ="\""+RescueSentence+"\"\n- "+Name+" " + ProfessionText + " "+ProfessionBonusInfo;
     }
 
     private void SetProfessionImage()
@@ -164,7 +179,7 @@ public class PersonMovement : MonoBehaviour
             yield return new WaitForSeconds(pickUpTextShowingTime);
             pickUpText.enabled = false;
             pickUpTextShowingTime = 2;
-            pickUpText.text = Name + ", " + profession + " " + ProfessionBonusInfo;
+            pickUpText.text = Name + " " + ProfessionText + " " + ProfessionBonusInfo;
         }
         else
         {
