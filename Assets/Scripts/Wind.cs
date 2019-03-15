@@ -7,8 +7,8 @@ public class Wind : MonoBehaviour
     AreaEffector2D area;
     ParticleSystemForceField particleForce;
     AudioSource audioSource;
-    float strength = 1;
-    public float maxStrength = 10;
+    public float strength = 0;
+    public float maxStrength = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class Wind : MonoBehaviour
     {
         strength += (Random.value - 0.5f) * 0.1f;
         strength = Mathf.Max(0.1f, Mathf.Min(maxStrength, strength));
-        transform.Rotate(new Vector3(0, 0, (Random.value - 0.5f) * 0.5f / strength));
+        transform.Rotate(new Vector3(0, 0, (Random.value - 0.5f) / strength));
         area.forceMagnitude = strength;
         particleForce.directionX = strength * 10f / transform.localScale.x;
         audioSource.volume = strength / maxStrength;
