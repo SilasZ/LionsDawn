@@ -94,7 +94,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beam: {fileID: 8544945464187527335, guid: a602c47501c0b0e46922d6bc8871687d, type: 3}
-  player: {fileID: 0}
 --- !u!58 &4499691452917460111
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -110,4 +109,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.415
+  m_Radius: 1
