@@ -23,6 +23,7 @@ public class CityEnter : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             wind.enabled = false;
+            theme.GetComponent<Music>().inCity = true;
         }
     }
 
@@ -31,6 +32,7 @@ public class CityEnter : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             wind.enabled = true;
+            theme.GetComponent<Music>().inCity = false;
         }
     }
 }
