@@ -50,7 +50,7 @@ public class PersonMovement : MonoBehaviour
     
     private void SetProfession()
     {
-        int normalPersonMultiplier = 3;
+        int normalPersonMultiplier = 4;
         int i = UnityEngine.Random.Range(0, (System.Enum.GetValues(typeof(Profession)).Length)+normalPersonMultiplier-1);
 
         profession = Profession.NormalDude;
@@ -92,8 +92,16 @@ public class PersonMovement : MonoBehaviour
             "Thanks for the ride mate",
             "I miss my cow, did you see her?",
             "I am so thirsty",
-            "I saw a tornado the other day!",
-            "Damn, I got sand in my shoes"};
+            "I saw a tornado!",
+            "Damn, I got sand in my shoes",
+            "I feel lost",
+            "Are you real?",
+            "My throat... is so dry, I... can barely... talk",
+            "There was a cow staring at me, few hours ago",
+            "The early bird has gold in it's mouth, hihi",
+            "Did the earth stop turning?",
+            "I miss the days when there were nights",
+            "C-c-crazy? Me? Naaaaahaha!"};
 
         int i = UnityEngine.Random.Range(0, sentences.Length);
         RescueSentence = sentences[i];

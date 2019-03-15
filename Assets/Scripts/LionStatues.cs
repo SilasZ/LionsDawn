@@ -10,6 +10,8 @@ public class LionStatues : MonoBehaviour
 
     public UIPlayerStatus playerUI;
 
+    bool clickedFirstTime = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +24,17 @@ public class LionStatues : MonoBehaviour
         
     }
 
+    public bool GotClickedFirstTime()
+    {
+        return clickedFirstTime;
+    }
+
     private void OnMouseDown()
     {
         
         if (!EventSystem.current.IsPointerOverGameObject())
         {
+            clickedFirstTime = true;
             endDay();
         }    
     }
