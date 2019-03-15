@@ -8,6 +8,6 @@ public class Place : MonoBehaviour
     public void AddPerson(PersonMovement person)
     {       
         person.transform.position = transform.position - Vector3.forward;
-        person.transform.parent = transform;
+        person.transform.SetParent(transform);
     }
 }
