@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Profession {normalDude, lookOut, sailor};
+public enum Profession {NormalDude, LookOut, Sailor};
 
 public class PersonMovement : MonoBehaviour
 {
@@ -20,18 +20,23 @@ public class PersonMovement : MonoBehaviour
 
     Profession profession;
     float speedBonusAll = 0;
-    float speedBonusSailor = 4;
+    float speedBonusSailor = 3;
     float visionBonusAll = 0;
     float visionBonusLookOut = 2;
 
     public Text pickUpText;
-    
+    String Name="";
+    String RescueSentence="";
+    String ProfessionBonusInfo="";
+
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Movement>();
         SetProfession();
+        SetStrings();
+        SetPickUpText();
     }
 
     public Profession GetProfession()
@@ -41,26 +46,72 @@ public class PersonMovement : MonoBehaviour
     
     private void SetProfession()
     {
-        float f = UnityEngine.Random.Range(0, System.Enum.GetValues(typeof(Profession)).Length);
-        if (f < 3) profession = Profession.sailor;
-        if (f < 2) profession = Profession.lookOut;
-        if (f < 1) profession = Profession.normalDude;
+        int i = UnityEngine.Random.Range(0, System.Enum.GetValues(typeof(Profession)).Length);
+        if (i < 3) profession = Profession.Sailor;
+        if (i < 2) profession = Profession.LookOut;
+        if (i < 1) profession = Profession.NormalDude;
 
         SetProfessionImage();
         SetProfessionBonus();
     }
 
+    void SetStrings()
+    {
+        SetName();
+        SetRescueSentence();
+        SetProfessionBonusInfo();
+    }
+
+    void SetName()
+    {
+        String[] names = new string[] {"Tom","John","Silas","Fabian","Basti","Lukas","Jan","Adrian","Julian","Philip","Neil","Hanson","Jake","Simon"};
+        int i = UnityEngine.Random.Range(0, names.Length);
+        Name = names[i];
+    }
+
+    void SetRescueSentence()
+    {
+        String[] sentences = new string[] {
+            "Thank you for saving me!",
+            "Can you bring me somewhere safe?",
+            "Please, I need water",
+            "How did you find me?",
+            "Oh god, I thought I was dead",
+            "You saved my life, how can I ever thank you?",
+            "How did I even get here?",
+            "What happened to this place?",
+            "Thanks for the ride mate",
+            "I miss my cow, did you see her?",
+            "I am so thirsty",
+            "I saw a tornado the other day!",
+            "Damn, I got sand in my shoes"};
+
+        int i = UnityEngine.Random.Range(0, sentences.Length);
+        RescueSentence = sentences[i];
+    }
+
+    void SetProfessionBonusInfo()
+    {
+        if (profession == Profession.Sailor) ProfessionBonusInfo = "(Speed +" + speedBonusSailor+")";
+        if (profession == Profession.LookOut) ProfessionBonusInfo = "(Vision +" + visionBonusLookOut+")";
+    }
+
+    void SetPickUpText()
+    {
+        pickUpText.text ="\""+RescueSentence+"\"\n"+Name+", " + profession + " "+ProfessionBonusInfo;
+    }
+
     private void SetProfessionImage()
     {
-        if (profession == Profession.normalDude) GetComponent<SpriteRenderer>().sprite = normalDudeSprite;
-        if (profession == Profession.lookOut) GetComponent<SpriteRenderer>().sprite=lookOutSprite;
-        if (profession == Profession.sailor) GetComponent<SpriteRenderer>().sprite = sailorSprite;
+        if (profession == Profession.NormalDude) GetComponent<SpriteRenderer>().sprite = normalDudeSprite;
+        if (profession == Profession.LookOut) GetComponent<SpriteRenderer>().sprite=lookOutSprite;
+        if (profession == Profession.Sailor) GetComponent<SpriteRenderer>().sprite = sailorSprite;
     }
 
     void SetProfessionBonus()
     {
-        if (profession == Profession.sailor) speedBonusAll = speedBonusSailor;
-        if (profession == Profession.lookOut) visionBonusAll = visionBonusLookOut;
+        if (profession == Profession.Sailor) speedBonusAll = speedBonusSailor;
+        if (profession == Profession.LookOut) visionBonusAll = visionBonusLookOut;
     }
 
     public float GetSpeedBonus()
@@ -112,8 +163,8 @@ public class PersonMovement : MonoBehaviour
             GetComponentInChildren<Canvas>().transform.rotation = GetComponentInParent<Movement>().transform.rotation;
             yield return new WaitForSeconds(pickUpTextShowingTime);
             pickUpText.enabled = false;
-            pickUpTextShowingTime = 3;
-            pickUpText.text = "John, Sailor (Speed +4)";
+            pickUpTextShowingTime = 2;
+            pickUpText.text = Name + ", " + profession + " " + ProfessionBonusInfo;
         }
         else
         {
