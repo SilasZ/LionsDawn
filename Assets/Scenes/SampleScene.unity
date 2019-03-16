@@ -144,6 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wind: {fileID: 274664590}
   theme: {fileID: 535203714}
+  startText: {fileID: 1614367652}
 --- !u!58 &16069750
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10847,7 +10848,7 @@ PrefabInstance:
     - target: {fileID: 2567798809243050561, guid: c9ca9a18bf8a0b74aa9cb8255f2d8158,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2567798809243050561, guid: c9ca9a18bf8a0b74aa9cb8255f2d8158,
         type: 3}
@@ -12160,7 +12161,7 @@ PrefabInstance:
     - target: {fileID: 2567798809243050561, guid: c9ca9a18bf8a0b74aa9cb8255f2d8158,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2567798809243050561, guid: c9ca9a18bf8a0b74aa9cb8255f2d8158,
         type: 3}
@@ -18813,7 +18814,7 @@ PrefabInstance:
     - target: {fileID: 2567798809243050561, guid: c9ca9a18bf8a0b74aa9cb8255f2d8158,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2567798809243050561, guid: c9ca9a18bf8a0b74aa9cb8255f2d8158,
         type: 3}
