@@ -35,6 +35,7 @@ public class TutorialControl : MonoBehaviour
         {
             clickOnWood = true;
             textA.enabled = false;
+            skipButton.SetActive(false);
         }
 
         if (clickOnWood&&tutorialWood)
@@ -48,7 +49,7 @@ public class TutorialControl : MonoBehaviour
             textC1.enabled = true;
             textC2.enabled = true;
 
-            skipButton.SetActive(false);
+            
         }
 
         if (personClicking&&!tutorialHuman.GetComponentInParent<Movement>()&& !tutorialHuman.GetComponentInParent<Place>())
@@ -109,7 +110,6 @@ public class TutorialControl : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         personClicking = true;
-        skipButton.SetActive(false);
     }
 
     public void SkipTutorial()
