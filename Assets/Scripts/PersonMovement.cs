@@ -33,6 +33,8 @@ public class PersonMovement : MonoBehaviour
     //hovering over me-------------------------------------------
     HoverUI hoverInterface;
 
+    public bool tutorialHuman = false;
+
     private void OnMouseEnter()
     {
         if (GetComponentInParent<Place>())
@@ -77,6 +79,8 @@ public class PersonMovement : MonoBehaviour
 
         if (i == 2) profession = Profession.LookOut;
         if (i == 1) profession = Profession.Sailor;
+
+        if (tutorialHuman) profession = Profession.NormalDude;
 
         SetProfessionImage();
         SetProfessionBonus();

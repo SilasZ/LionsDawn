@@ -151,6 +151,14 @@ public class Movement : MonoBehaviour
             speed = speed + person.GetSpeedBonus();
             cam.orthographicSize = cam.orthographicSize + person.GetVisionBonus();
         }
+        RefreshProfessionBoniDisplay();
+    }
+
+    void RefreshProfessionBoniDisplay()
+    {
+        float newSpeedBonus = speed - standardSpeed;
+        float newVisionBonus = cam.orthographicSize - cameraStartSize;
+        ui.RefreshCrewBonus(newSpeedBonus, newVisionBonus);
     }
 
     public void AddCrowsNest()

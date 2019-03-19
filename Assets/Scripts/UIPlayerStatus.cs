@@ -19,6 +19,8 @@ public class UIPlayerStatus : MonoBehaviour
     public Text deadText;
     public Text startText;
     public Text crewCountText;
+    public GameObject crewBonusWindow;
+    public Text crewBonustext;
 
     int lifeBarLength;
     int lifeFrameLength;
@@ -98,6 +100,23 @@ public class UIPlayerStatus : MonoBehaviour
     public void NewWoodCount(int count)
     {
         woodCount.text =""+ count;
+    }
+
+    public void RefreshCrewBonus(float speedBonus, float visionBonus)
+    {
+        if (speedBonus > 0 || visionBonus > 0)
+        {
+            crewBonusWindow.SetActive(true);
+            string speedpart = "";
+            if(speedBonus>0) speedpart= "\nSpeed +"+speedBonus;
+            string visionpart = "";
+            if (visionBonus > 0) visionpart = "\nVision +" + visionBonus;
+            crewBonustext.text = "Crew bonus\n" + speedpart + visionpart;
+        }
+        else
+        {
+            crewBonusWindow.SetActive(false);
+        }
     }
 
     IEnumerator HideTextAfterTime(Text text, int secounds)
