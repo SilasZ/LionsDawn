@@ -30,6 +30,26 @@ public class PersonMovement : MonoBehaviour
     String ProfessionBonusInfo="";
     String ProfessionText = "";
 
+    //hovering over me-------------------------------------------
+    HoverUI hoverInterface;
+
+    public bool tutorialHuman = false;
+
+    private void OnMouseEnter()
+    {
+        if (GetComponentInParent<Place>())
+        {
+            hoverInterface.show();
+            hoverInterface.hoverText.text = Name + " " + ProfessionText + " " + ProfessionBonusInfo;
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        hoverInterface.hide();
+    }
+    //------------------------------------------------------------
+
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +61,8 @@ public class PersonMovement : MonoBehaviour
         SetProfession();
         SetStrings();
         SetPickUpText();
+
+        hoverInterface = FindObjectOfType<HoverUI>();
     }
 
     public Profession GetProfession()
@@ -51,12 +73,14 @@ public class PersonMovement : MonoBehaviour
     private void SetProfession()
     {
         int normalPersonMultiplier = 4;
-        int i = UnityEngine.Random.Range(0, (System.Enum.GetValues(typeof(Profession)).Length)+normalPersonMultiplier-1);
+        int i = UnityEngine.Random.Range(1, (System.Enum.GetValues(typeof(Profession)).Length+1)+normalPersonMultiplier-1);
 
         profession = Profession.NormalDude;
 
-        if (i < 2) profession = Profession.LookOut;
-        if (i < 1) profession = Profession.Sailor;
+        if (i == 2) profession = Profession.LookOut;
+        if (i == 1) profession = Profession.Sailor;
+
+        if (tutorialHuman) profession = Profession.NormalDude;
 
         SetProfessionImage();
         SetProfessionBonus();
@@ -121,7 +145,7 @@ public class PersonMovement : MonoBehaviour
 
     void SetPickUpText()
     {
-        pickUpText.text ="\""+RescueSentence+"\"\n- "+Name+" " + ProfessionText + " "+ProfessionBonusInfo;
+        pickUpText.text = "\"" + RescueSentence + "\"\n- " + Name +" " + ProfessionText + " "+ProfessionBonusInfo;
     }
 
     private void SetProfessionImage()
@@ -186,8 +210,8 @@ public class PersonMovement : MonoBehaviour
             GetComponentInChildren<Canvas>().transform.rotation = GetComponentInParent<Movement>().transform.rotation;
             yield return new WaitForSeconds(pickUpTextShowingTime);
             pickUpText.enabled = false;
-            pickUpTextShowingTime = 2;
-            pickUpText.text = Name + " " + ProfessionText + " " + ProfessionBonusInfo;
+            //pickUpTextShowingTime = 2;
+            pickUpText.text = "";// Name + " " + ProfessionText + " " + ProfessionBonusInfo;
         }
         else
         {
