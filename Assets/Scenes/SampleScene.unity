@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 25612123}
   - component: {fileID: 25612122}
   - component: {fileID: 25612121}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 115155905}
   - component: {fileID: 115155904}
   - component: {fileID: 115155903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6155,7 +6155,7 @@ GameObject:
   - component: {fileID: 205739319}
   - component: {fileID: 205739321}
   - component: {fileID: 205739320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextD4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6467,7 +6467,7 @@ GameObject:
   - component: {fileID: 259364715}
   - component: {fileID: 259364716}
   - component: {fileID: 259364717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextE2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12959,7 +12959,7 @@ GameObject:
   - component: {fileID: 527823103}
   - component: {fileID: 527823104}
   - component: {fileID: 527823105}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextE3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13179,7 +13179,7 @@ GameObject:
   - component: {fileID: 557940115}
   - component: {fileID: 557940117}
   - component: {fileID: 557940116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextF2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14098,7 +14098,7 @@ GameObject:
   - component: {fileID: 776600570}
   - component: {fileID: 776600572}
   - component: {fileID: 776600571}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14306,7 +14306,7 @@ GameObject:
   - component: {fileID: 800313058}
   - component: {fileID: 800313060}
   - component: {fileID: 800313059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextF1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14639,7 +14639,7 @@ GameObject:
   - component: {fileID: 875642051}
   - component: {fileID: 875642053}
   - component: {fileID: 875642052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextD5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14921,7 +14921,7 @@ GameObject:
   - component: {fileID: 914985157}
   - component: {fileID: 914985159}
   - component: {fileID: 914985158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextC1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15260,7 +15260,8 @@ MonoBehaviour:
   crewMax: 0
   sound: {fileID: 1868210643}
   steam: {fileID: 267276996}
-  minimap: {fileID: 446298576}
+  minimap: {fileID: 446298574}
+  minimapFrame: {fileID: 1448568600}
 --- !u!60 &1018007125
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15801,7 +15802,7 @@ GameObject:
   - component: {fileID: 1123907320}
   - component: {fileID: 1123907322}
   - component: {fileID: 1123907321}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15880,7 +15881,7 @@ GameObject:
   - component: {fileID: 1130007696}
   - component: {fileID: 1130007697}
   - component: {fileID: 1130007698}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextE1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16387,7 +16388,7 @@ GameObject:
   - component: {fileID: 1243973776}
   - component: {fileID: 1243973777}
   - component: {fileID: 1243973778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16540,7 +16541,7 @@ GameObject:
   - component: {fileID: 1327027880}
   - component: {fileID: 1327027882}
   - component: {fileID: 1327027881}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17696,7 +17697,7 @@ GameObject:
   - component: {fileID: 1493670013}
   - component: {fileID: 1493670015}
   - component: {fileID: 1493670014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextC2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18751,7 +18752,7 @@ GameObject:
   - component: {fileID: 1804743662}
   - component: {fileID: 1804743664}
   - component: {fileID: 1804743663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextD6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18988,7 +18989,7 @@ GameObject:
   - component: {fileID: 1820591527}
   - component: {fileID: 1820591529}
   - component: {fileID: 1820591528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24876,7 +24877,7 @@ GameObject:
   - component: {fileID: 2138930941}
   - component: {fileID: 2138930943}
   - component: {fileID: 2138930942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TextD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

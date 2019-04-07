@@ -27,7 +27,8 @@ public class Movement : MonoBehaviour
     public AudioSource sound;
     public ParticleSystem steam;
 
-    public Camera minimap;
+    public GameObject minimap;
+    public GameObject minimapFrame;
 
 
     Place[] places;
@@ -163,7 +164,8 @@ public class Movement : MonoBehaviour
 
     public void AddCrowsNest()
     {
-
+        minimap.SetActive(true);
+        minimapFrame.SetActive(true);
     }
 
     public void RepairShipComplete()
