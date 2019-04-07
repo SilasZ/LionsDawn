@@ -6218,7 +6218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201716782}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.09, y: -0.79, z: -2}
+  m_LocalPosition: {x: -0.09, y: -0.79, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1018007128}
@@ -17609,7 +17609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1433755215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17668,6 +17668,7 @@ MonoBehaviour:
   perlinScale: 100
   threshold: 0.5
   z: -3
+  ignoreObstacles: 0
 --- !u!114 &1433755218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17691,6 +17692,7 @@ MonoBehaviour:
   perlinScale: 100
   threshold: 0.5
   z: -3
+  ignoreObstacles: 0
 --- !u!114 &1433755219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17703,17 +17705,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e543b74f737b7e14db443c0be540488a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numObstacles: 100
+  numObstacles: 50
   mapSizeR: 500
   objectScaleFactor: 30
   prefabsObstacle:
   - {fileID: 8769438014423824553, guid: 1487757af4f90244b982c10b48bc796e, type: 3}
   - {fileID: 4135311340016260052, guid: 7597b38f90ab43740a5c25742bdfa764, type: 3}
   - {fileID: 5521464095059009763, guid: 065dc57d54a593141b8c095a0e7d36cc, type: 3}
+  - {fileID: 5417306128654213628, guid: 5d9f182e5a0691c4a93dddb8964c8b8d, type: 3}
   spawnRadius: 0
   perlinScale: 100
   threshold: 0
   z: -1
+  ignoreObstacles: 1
 --- !u!114 &1433755220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17737,6 +17741,7 @@ MonoBehaviour:
   perlinScale: 100
   threshold: 0.3
   z: -3
+  ignoreObstacles: 0
 --- !u!114 &1433755221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17758,6 +17763,7 @@ MonoBehaviour:
   perlinScale: 100
   threshold: 0.2
   z: -3
+  ignoreObstacles: 0
 --- !u!1 &1448568600
 GameObject:
   m_ObjectHideFlags: 0
