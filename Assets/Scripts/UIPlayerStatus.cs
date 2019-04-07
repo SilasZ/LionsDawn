@@ -29,7 +29,8 @@ public class UIPlayerStatus : MonoBehaviour
 
     public Text woodCount;
 
-    int day = 1;
+    int sleptHours = 1;
+    int hours = 0;
 
     public void IncreaseBarByPercentOfStartValue(Bars bar,float percent)
     {
@@ -77,12 +78,24 @@ public class UIPlayerStatus : MonoBehaviour
         fuelFrameLength = barStartLength;
     }
 
-    public void newDay()
+    public void newDay(bool gotClickedBefore)
     {
-        day++;
+        
+
+        sleptHours++;
+
+        hours = ((int) Time.time/60)+ sleptHours;
+
         startText.enabled = true;
-        startText.text = "Day " + day;
-        StartCoroutine(HideTextAfterTime(startText,2));
+        startText.text ="You first launched "+hours+" hours ago.";
+        int i = 2;
+        if (!gotClickedBefore)
+        {
+            startText.text = startText.text + "\n People won't make it forever...";
+            i = 5;
+        }
+
+        StartCoroutine(HideTextAfterTime(startText,i));
     }
 
     public void NewCrewCount(int crewNow, int crewMax)

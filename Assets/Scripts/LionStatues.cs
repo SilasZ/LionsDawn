@@ -31,10 +31,8 @@ public class LionStatues : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            clickedFirstTime = true;
             endDay();
         }    
     }
@@ -42,6 +40,7 @@ public class LionStatues : MonoBehaviour
     void endDay()
     {
         movement.RefillWaterTank();
-        playerUI.newDay();
+        playerUI.newDay(clickedFirstTime);
+        clickedFirstTime = true;
     }
 }
