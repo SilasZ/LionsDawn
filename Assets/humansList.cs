@@ -5,7 +5,6 @@ using UnityEngine;
 public class humansList : MonoBehaviour
 {
     List<PersonMovement> humans=new List<PersonMovement>();
-    int humansMax=0;
     bool humansMaxSet = false;
 
     int hoursAlreadyGone = 0;
@@ -17,16 +16,10 @@ public class humansList : MonoBehaviour
             if (!person.GetComponentInParent<Place>()) humans.Add(person);
         }
 
-        if (!humansMaxSet)
-        {
-            humansMax = humans.Count;
-            humansMaxSet = true;
-        }
-
         float hoursDyingNow = hours - hoursAlreadyGone;
         hoursAlreadyGone = hours;
 
-        int dyingPeople =Mathf.Max((int) ((humansMax / 20) * hoursDyingNow),1);
+        int dyingPeople = (int) (5 * hoursDyingNow);
 
         for (int x=0; x < dyingPeople; x++)
         {
