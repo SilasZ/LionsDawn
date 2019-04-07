@@ -11746,7 +11746,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click at wood to pick it up
+  m_Text: Click [Mouse1] on wood to pick it up
 --- !u!1 &1319625111
 GameObject:
   m_ObjectHideFlags: 0
