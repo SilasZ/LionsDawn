@@ -160,7 +160,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 60
 --- !u!4 &16069751
 Transform:
   m_ObjectHideFlags: 0
@@ -18925,7 +18925,7 @@ MonoBehaviour:
   rn: {fileID: 443833451757933696, guid: 97177cd52e69c8643a85a990b4deb8c3, type: 3}
   numRunners: 15
   numDescendingGenerations: 10
-  spawnRadius: 52
+  spawnRadius: 62
 --- !u!212 &1647705011
 SpriteRenderer:
   m_ObjectHideFlags: 0
