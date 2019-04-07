@@ -95,6 +95,8 @@ public class UIPlayerStatus : MonoBehaviour
             i = 5;
         }
 
+        FindObjectOfType<humansList>().KillPeople(hours);
+
         StartCoroutine(HideTextAfterTime(startText,i));
     }
 
@@ -138,13 +140,30 @@ public class UIPlayerStatus : MonoBehaviour
         text.enabled = false;
     }
 
-
-    
-
     IEnumerator EndGame()
     {
         yield return new WaitForSeconds(4);
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+    }
+
+    public void GameFinished(int hoursItTookYou)
+    {
+        int savedSouls = 0;
+        foreach(PersonMovement p in FindObjectsOfType<PersonMovement>())
+        {
+            if (p.GetComponentInParent<Place>()) savedSouls++;
+        }
+        deadText.color = new Color(255, 255, 255);
+        deadText.text="The sun burned this land\nfor more than "+hoursItTookYou+" hours now.\nNoone out there can still be alive...\n You saved "+savedSouls+" lost souls.\nWell done!";
+        deadText.enabled = true;
+        startText.enabled = false;
+        StartCoroutine(CloseGame());
+    }
+
+    IEnumerator CloseGame()
+    {
+        yield return new WaitForSeconds(8);
+        Application.Quit();
     }
 
 }

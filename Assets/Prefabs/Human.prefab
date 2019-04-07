@@ -105,6 +105,8 @@ MonoBehaviour:
   beamRadius: 30
   beam: {fileID: 8544945464187527335, guid: a602c47501c0b0e46922d6bc8871687d, type: 3}
   pickUpText: {fileID: 158331281906076872}
+  corpse: {fileID: 2544380356932371769, guid: 87d40a75502b478469c4f5d7e582fc3d, type: 3}
+  tutorialHuman: 0
 --- !u!135 &5213400452927064976
 SphereCollider:
   m_ObjectHideFlags: 0

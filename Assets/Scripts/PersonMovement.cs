@@ -30,6 +30,8 @@ public class PersonMovement : MonoBehaviour
     String ProfessionBonusInfo="";
     String ProfessionText = "";
 
+    public GameObject corpse;
+
     //hovering over me-------------------------------------------
     HoverUI hoverInterface;
 
@@ -125,7 +127,8 @@ public class PersonMovement : MonoBehaviour
             "The early bird has gold in it's mouth, hihi",
             "Did the earth stop turning?",
             "I miss the days when there were nights",
-            "C-c-crazy? Me? Naaaaahaha!"};
+            "C-c-crazy? Me? Naaaaahaha!",
+            "I love this song!"};
 
         int i = UnityEngine.Random.Range(0, sentences.Length);
         RescueSentence = sentences[i];
@@ -170,15 +173,6 @@ public class PersonMovement : MonoBehaviour
         return visionBonusAll;
     }
 
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnMouseDown()
     {
         StartCoroutine(Beam()); 
@@ -198,6 +192,7 @@ public class PersonMovement : MonoBehaviour
 
             player.RefreshCrewNow();
             StartCoroutine(SayPickUpText());
+
         }      
     }
 
@@ -218,5 +213,11 @@ public class PersonMovement : MonoBehaviour
             pickUpText.enabled = false;
         }
         //yield return new WaitForSeconds(0);
+    }
+
+    public void Die()
+    {
+        Instantiate(corpse, transform.position, transform.rotation);
+        Destroy(this.gameObject);
     }
 }

@@ -11,6 +11,7 @@ public class LionStatues : MonoBehaviour
     public UIPlayerStatus playerUI;
 
     bool clickedFirstTime = false;
+    bool clickable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +32,9 @@ public class LionStatues : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!EventSystem.current.IsPointerOverGameObject())
+        if (!EventSystem.current.IsPointerOverGameObject()&&clickable)
         {
+            StartCoroutine(UnclickableForTime(5));
             endDay();
         }    
     }
@@ -42,5 +44,12 @@ public class LionStatues : MonoBehaviour
         movement.RefillWaterTank();
         playerUI.newDay(clickedFirstTime);
         clickedFirstTime = true;
+    }
+
+    IEnumerator UnclickableForTime(int secounds)
+    {
+        clickable = false;
+        yield return new WaitForSeconds(secounds);
+        clickable = true;
     }
 }
