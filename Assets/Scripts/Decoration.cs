@@ -12,6 +12,7 @@ public class Decoration : MonoBehaviour
     public float perlinScale;
     public float threshold;
     public int z;
+    public bool ignoreObstacles;
 
     // Start is called before the first frame update
     public void Decorate()
@@ -31,7 +32,7 @@ public class Decoration : MonoBehaviour
             
             float noiseValue = Mathf.PerlinNoise(perlinSeed + xPos / perlinScale, perlinSeed + yPos / perlinScale);
 
-            if (noiseValue > threshold && !Physics2D.OverlapCircle(new Vector3(xPos, yPos, z), objectScaleFactor, 1))
+            if (noiseValue > threshold && (ignoreObstacles || !Physics2D.OverlapCircle(new Vector3(xPos, yPos, z), objectScaleFactor, 1)))
             {
                 int index = Random.Range(0, prefabsObstacle.Length);
                 GameObject prefabObject = prefabsObstacle[index];

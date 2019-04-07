@@ -97,11 +97,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 743227b9f1a0d0c4da05ff79db69c155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalDudeSprite: {fileID: 21300000, guid: b5c4f19af65a9a141aace1cf635d3216, type: 3}
-  lookOutSprite: {fileID: 21300000, guid: fb8cf58c13bb46243baed51ae09d6efb, type: 3}
-  sailorSprite: {fileID: 21300000, guid: 027680680b97e194b9aba964195cf9f8, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  normalDudeSprite: {fileID: 21300000, guid: 43a0d6dedbac5ab4fa788c2fa4c3796d, type: 3}
+  lookOutSprite: {fileID: 21300000, guid: 01a1eca4327977c458fa7e92fa522abc, type: 3}
+  sailorSprite: {fileID: 21300000, guid: b7b4e3d32fb5e794c84502b4e3e9f0e3, type: 3}
   beamRadius: 30
   beam: {fileID: 8544945464187527335, guid: a602c47501c0b0e46922d6bc8871687d, type: 3}
   pickUpText: {fileID: 158331281906076872}
@@ -175,8 +175,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
@@ -271,8 +271,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -293,8 +293,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
