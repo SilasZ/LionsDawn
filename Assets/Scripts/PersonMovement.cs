@@ -185,8 +185,8 @@ public class PersonMovement : MonoBehaviour
         var nearestPlace = places.OrderBy(a => Vector2.Distance(a.transform.position, transform.position)).FirstOrDefault();
         if (nearestPlace && Vector2.Distance(nearestPlace.transform.position, transform.position) < maxDistance)
         {
-            Instantiate(beam, transform.position - Vector3.forward, Quaternion.identity);
-            Instantiate(beam, nearestPlace.transform.position - Vector3.forward, Quaternion.identity);
+            Instantiate(beam, transform.position-Vector3.forward, Quaternion.identity).transform.parent = transform;
+            Instantiate(beam, nearestPlace.transform.position - Vector3.forward, Quaternion.identity).transform.parent = nearestPlace.transform;
             yield return new WaitForSeconds(0.3f);
             nearestPlace.GetComponent<Place>().AddPerson(this);
 
