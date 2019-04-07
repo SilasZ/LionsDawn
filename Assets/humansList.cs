@@ -5,7 +5,6 @@ using UnityEngine;
 public class humansList : MonoBehaviour
 {
     List<PersonMovement> humans=new List<PersonMovement>();
-    bool humansMaxSet = false;
 
     int hoursAlreadyGone = 0;
     public void KillPeople(int hours)
