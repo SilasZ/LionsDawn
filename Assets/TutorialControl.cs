@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TutorialControl : MonoBehaviour
 {
-    public Text textA, TextB, textC1,textC2, textD1,textD2, textD3, textD4, textD5, textD6, textE1, textE2, textE3, textF1, textF2;
+    public Text textA, TextB, textC1,textC2, textD1,textD2, textD3, textD4, textD5, textD6, textE1, textE2, textE3, textE4, textF1, textF2, textEND;
     bool clickOnWood = false;
     bool personClicking = false;
     bool putPersonInTown = false;
@@ -15,6 +15,8 @@ public class TutorialControl : MonoBehaviour
     GameObject player;
     public LionStatues statues;
     public GameObject skipButton;
+
+    bool endingTutorial = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +82,7 @@ public class TutorialControl : MonoBehaviour
             textE1.enabled = true;
             textE2.enabled = true;
             textE3.enabled = true;
+            textE4.enabled = true;
         }
 
         if(tutorialHuman.GetComponentInParent<Place>()&& !tutorialHuman.GetComponentInParent<Movement>())
@@ -93,6 +96,7 @@ public class TutorialControl : MonoBehaviour
             textE1.enabled = false;
             textE2.enabled = false;
             textE3.enabled = false;
+            textE4.enabled = false;
             Destroy(tutorialTent);
 
             textF1.enabled = true;
@@ -100,14 +104,42 @@ public class TutorialControl : MonoBehaviour
         }
 
 
-        if (statues.GotClickedFirstTime())
+        if (statues.GotClickedFirstTime()&&!endingTutorial)
         {
-            Destroy(this.gameObject);
+            endingTutorial = true;
+            StartCoroutine(EndTutorial());
         }
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    IEnumerator EndTutorial()
+    {
+
+        textA.text = "";
+        TextB.text = "";
+        textC1.text = "";
+        textC2.text = "";
+        textD1.text = "";
+        textD2.text = "";
+        textD3.text = "";
+        textD4.text = "";
+        textD5.text = "";
+        textD6.text = "";
+        textE1.text = "";
+        textE2.text = "";
+        textE3.text = "";
+        textE4.text = "";
+        textF1.text = "";
+        textF2.text = "";
+        if(skipButton) skipButton.SetActive(false);
+
+        yield return new WaitForSeconds(5);
+        textEND.enabled = true;
+        yield return new WaitForSeconds(4);
+        Destroy(this.gameObject);
+    }
+
+        private void OnTriggerEnter2D(Collider2D collision)
     {
         personClicking = true;
     }
