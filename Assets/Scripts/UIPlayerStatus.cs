@@ -144,7 +144,7 @@ public class UIPlayerStatus : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         //Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
-        SceneManager.LoadScene("GameLoader", LoadSceneMode.Single);
+        SceneManager.LoadScene("LoadingScene", LoadSceneMode.Single);
     }
 
     public void GameFinished(int hoursItTookYou)
