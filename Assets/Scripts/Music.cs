@@ -8,7 +8,7 @@ public class Music : MonoBehaviour
     Wind wind;
     AudioSource audioSource;
     public bool inCity;
-    float dVol = 0.002f;
+    float dVol = 0.02f;
     float desiredVolume = 0;
     // Start is called before the first frame update
     void Start()
