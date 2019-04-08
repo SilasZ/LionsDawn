@@ -193,8 +193,14 @@ public class Movement : MonoBehaviour
     {
         RefreshUI();
         RefreshMinimapPosition();
+        CheckESC();
     }
 
+    void CheckESC()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+    }
+   
     private void RefreshMinimapPosition()
     {
         minimap.transform.position = transform.position+new Vector3(0,0,-10);
