@@ -18,7 +18,7 @@ public class humansList : MonoBehaviour
         float hoursDyingNow = hours - hoursAlreadyGone;
         hoursAlreadyGone = hours;
 
-        int dyingPeople = (int) (5 * hoursDyingNow);
+        int dyingPeople = (int) (3 * hoursDyingNow);
 
         for (int x=0; x < dyingPeople; x++)
         {

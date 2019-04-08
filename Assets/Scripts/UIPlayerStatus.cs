@@ -85,7 +85,6 @@ public class UIPlayerStatus : MonoBehaviour
         sleptHours++;
 
         hours = ((int) Time.time/60)+ sleptHours;
-        Debug.Log("hours:" + hours);
 
         startText.enabled = true;
         startText.text ="You first launched "+hours+" hours ago.";

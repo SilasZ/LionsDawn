@@ -5,11 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class GameLoader : MonoBehaviour
 {
-    public Scene s;
-    // Start is called before the first frame update
+    bool firstUpdate = true;
     void Update()
     {
-        if(Time.time>0.5)
-        SceneManager.LoadScene("SampleScene",LoadSceneMode.Single);
+        if (firstUpdate)
+        {
+            firstUpdate = false;
+            StartCoroutine(StartGame());
+        } 
     }
+
+    IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(0.1F);
+        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+    }
+    
 }
