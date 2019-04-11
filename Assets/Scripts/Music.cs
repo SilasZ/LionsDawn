@@ -8,7 +8,7 @@ public class Music : MonoBehaviour
     Wind wind;
     AudioSource audioSource;
     public bool inCity;
-    float dVol = 0.02f;
+    float dVol = 0.002f;
     float desiredVolume = 0;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class Music : MonoBehaviour
             desiredVolume = 0;
         } else
         {
-            desiredVolume = Mathf.Clamp(1 - (wind.strength / wind.maxStrength)*2, 0, 1);
+            desiredVolume = Mathf.Clamp(1 - (wind.strength / wind.maxStrength)*1.5f, 0, 1);
         }
         audioSource.volume += Mathf.Sign(desiredVolume - audioSource.volume) * dVol;
     }

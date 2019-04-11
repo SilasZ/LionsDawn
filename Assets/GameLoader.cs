@@ -18,7 +18,7 @@ public class GameLoader : MonoBehaviour
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(0.1F);
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }
     
 }
