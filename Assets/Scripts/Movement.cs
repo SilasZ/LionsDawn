@@ -30,6 +30,10 @@ public class Movement : MonoBehaviour
     public GameObject minimap;
     public GameObject minimapFrame;
 
+    LineRenderer rescueLineRenderer;
+    bool rescueUsed = false;
+    bool createRescueLine = false;
+
 
     Place[] places;
 
@@ -55,6 +59,8 @@ public class Movement : MonoBehaviour
         cameraStartSize = cam.orthographicSize;
 
         AddWood(3);
+
+        rescueLineRenderer = GetComponent<LineRenderer>();
     }
 
     void SetPlacesOnStartValues()
@@ -187,6 +193,7 @@ public class Movement : MonoBehaviour
     public void RefillWaterTank()
     {
         waterNow = waterMax;
+        rescueUsed = false;
     }
 
     private void Update()
@@ -194,13 +201,46 @@ public class Movement : MonoBehaviour
         RefreshUI();
         RefreshMinimapPosition();
         CheckESC();
+        CheckRescue();
+        UpdateRescueLine();
+    }
+
+    void UpdateRescueLine()
+    {
+        if (createRescueLine)
+        {
+            rescueLineRenderer.enabled = true;
+            rescueLineRenderer.SetPosition(0, transform.position);
+            rescueLineRenderer.SetPosition(1, new Vector3(0, 0, -4));
+        }
+        else
+        {
+            rescueLineRenderer.enabled = false;
+        }
     }
 
     void CheckESC()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
     }
-   
+
+    void CheckRescue()
+    {
+        if (Input.GetKey("r") && !rescueUsed)
+        {
+            rescueUsed = true;
+            StartCoroutine(RescueLineTimer());
+        }
+    }
+
+    IEnumerator RescueLineTimer()
+    {
+        createRescueLine = true;
+        yield return new WaitForSeconds(1);
+        createRescueLine = false;
+    }
+
+
     private void RefreshMinimapPosition()
     {
         minimap.transform.position = transform.position+new Vector3(0,0,-10);
